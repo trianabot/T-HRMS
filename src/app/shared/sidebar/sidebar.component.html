@@ -9,7 +9,7 @@
       <nav class="u-sidebar-nav">
         <ul class="u-sidebar-nav-menu u-sidebar-nav-menu--top-level">
           <!-- Dashboard -->
-          <li class="u-sidebar-nav-menu__item">
+          <li class="u-sidebar-nav-menu__item" >
             <a class="u-sidebar-nav-menu__link active" href="./index.html">
               <i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
               <span class="u-sidebar-nav-menu__item-title" routerLink="/dashboard" routerLinkActive="active">Dashboard</span>
@@ -18,13 +18,14 @@
           <!-- End Dashboard -->
   
           <!-- Base UI -->
-          <li class="u-sidebar-nav-menu__item" (click) = "baseUI()">
-            <a class="u-sidebar-nav-menu__link" href="#!" data-target="#baseUI">
-              <i class="far fa-gem u-sidebar-nav-menu__item-icon"></i>
-              <span class="u-sidebar-nav-menu__item-title">Base UI</span>
-              <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
-              <span class="u-sidebar-nav-menu__indicator"></span>
-            </a>
+          <a class="u-sidebar-nav-menu__link"  data-target="#baseUI">
+            <i class="far fa-gem u-sidebar-nav-menu__item-icon"></i>
+            <span class="u-sidebar-nav-menu__item-title">Employees</span>
+            <!-- <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i> -->
+            <span class="u-sidebar-nav-menu__indicator"></span>
+          </a>
+          <!-- <li class="u-sidebar-nav-menu__item" (click) = "baseUI()">
+            
   
             <ul id="baseUI" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" *ngIf = "baseUIdata" style="display: block;">
               <li class="u-sidebar-nav-menu__item">
@@ -40,21 +41,22 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <!-- End Base UI -->
   
           <!-- UI Components -->
-          <li class="u-sidebar-nav-menu__item" (click) = "uicomponents()">
-            <a class="u-sidebar-nav-menu__link" href="#!" data-target="#subMenu1">
-              <i class="far fa-paper-plane u-sidebar-nav-menu__item-icon"></i>
-              <span class="u-sidebar-nav-menu__item-title">UI Components</span>
-              <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
-              <span class="u-sidebar-nav-menu__indicator"></span>
-            </a>
+          <a class="u-sidebar-nav-menu__link" href="#!" data-target="#subMenu1">
+            <i class="far fa-paper-plane u-sidebar-nav-menu__item-icon"></i>
+            <span class="u-sidebar-nav-menu__item-title">Departments</span>
+            <!-- <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i> -->
+            <span class="u-sidebar-nav-menu__indicator"></span>
+          </a>
+          <!-- <li class="u-sidebar-nav-menu__item" (click) = "uicomponents()">
+           
   
             <ul id="subMenu1" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" *ngIf = "uicomponentsdata" style="display: block;">
-              <!-- Components -->
-              <li class="u-sidebar-nav-menu__item">
+              Components -->
+              <!-- <li class="u-sidebar-nav-menu__item">
                 <a class="u-sidebar-nav-menu__link" href="./ui-alerts.html">
                   <span class="u-sidebar-nav-menu__item-icon">A</span>
                   <span class="u-sidebar-nav-menu__item-title">Alerts</span>
@@ -89,40 +91,52 @@
                   <span class="u-sidebar-nav-menu__item-icon">O</span>
                   <span class="u-sidebar-nav-menu__item-title">Other Components</span>
                 </a>
-              </li>
+              </li> -->
               <!-- End Components -->
-            </ul>
-          </li>
+            <!-- </ul>
+          </li> -->
           <!-- End UI Components -->
   
           <!-- Forms -->
-          <li class="u-sidebar-nav-menu__item">
-            <a class="u-sidebar-nav-menu__link" href="./forms.html">
+          <li class="u-sidebar-nav-menu__item" (click) = "account()">
+            <a class="u-sidebar-nav-menu__link" >
               <i class="far fa-edit u-sidebar-nav-menu__item-icon"></i>
-              <span class="u-sidebar-nav-menu__item-title">Forms</span>
+              <span class="u-sidebar-nav-menu__item-title">Payroll</span>
+              <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
+              <!-- <span class="u-sidebar-nav-menu__indicator"></span> -->
             </a>
+            <ul id="subMenu2" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" *ngIf = "accountdata" style="display: block;">
+              <li class="u-sidebar-nav-menu__item">
+                <a class="u-sidebar-nav-menu__link" href="./account-profile.html">
+                  <span class="u-sidebar-nav-menu__item-icon">P</span>
+                  <span class="u-sidebar-nav-menu__item-title">HR Profile</span>
+                </a>
+              </li>
+              </ul>
           </li>
           <!-- End Forms -->
   
           <!-- Tables -->
-          <li class="u-sidebar-nav-menu__item">
-            <a class="u-sidebar-nav-menu__link" href="./tables.html">
+          <li class="u-sidebar-nav-menu__item" >
+            <a class="u-sidebar-nav-menu__link" >
               <i class="far fa-list-alt u-sidebar-nav-menu__item-icon"></i>
-              <span class="u-sidebar-nav-menu__item-title">Tables</span>
+              <span class="u-sidebar-nav-menu__item-title">Facilitate</span>
             </a>
           </li>
           <!-- End Tables -->
   
           <!-- Account Pages -->
-          <li class="u-sidebar-nav-menu__item" (click) = "account()">
-            <a class="u-sidebar-nav-menu__link" href="#!" data-target="#subMenu2">
+          <li class="u-sidebar-nav-menu__item" >
+            <a class="u-sidebar-nav-menu__link"  data-target="#subMenu2">
               <i class="far fa-user-circle u-sidebar-nav-menu__item-icon"></i>
-              <span class="u-sidebar-nav-menu__item-title">Account Pages</span>
-              <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
+              <span class="u-sidebar-nav-menu__item-title">Clients</span>
+              <!-- <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i> -->
               <span class="u-sidebar-nav-menu__indicator"></span>
             </a>
+            
+          </li>
   
-            <ul id="subMenu2" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" *ngIf = "accountdata" style="display: block;">
+            <!-- <ul id="subMenu2" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" *ngIf = "accountdata" style="display: block;">
               <li class="u-sidebar-nav-menu__item">
                 <a class="u-sidebar-nav-menu__link" href="./account-profile.html">
                   <span class="u-sidebar-nav-menu__item-icon">P</span>
@@ -147,8 +161,7 @@
                   <span class="u-sidebar-nav-menu__item-title">Recover Password</span>
                 </a>
               </li>
-            </ul>
-          </li>
+            </ul> -->
           <!-- End Account Pages -->
   
           <!-- Other Pages -->

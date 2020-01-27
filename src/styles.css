@@ -10341,7 +10341,7 @@
   @media (min-width: 768px) {
     .u-main {
       min-height: calc(100% - 3.75rem);
-      padding-left: 15rem;
+      padding-left: 32rem;
     }
     body.tablet-mode .u-main,
     body.side-nav-on-action .u-main {
@@ -11578,6 +11578,49 @@
   .mini .mCSB_outside + .mCSB_scrollTools {
     left: 0;
   }
+
+
+  .cReport_icon{
+    width: 45px;
+    height: 45px;
+    float: left;
+    background: #8dbd32;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 100%;
+  }
+  .cReport_icon_container {
+    width: 100%;
+    float: left;
+    margin-bottom: 8px;
+}
+.cReport_file_container {
+  width: 100%;
+  float: left;
+  padding-left: 45px;
+  margin-top: 15px;
+}
+.pbd_pdf_icon {
+  float: left;
+  font-size: 36px;
+  margin-left: -45px;
+  color: #b6b6b6;
+}
+.pbd_Creports_list li {
+  list-style: none;
+  width: calc(25% - 20px);
+  float: left;
+  padding-right: 30px;
+  border-right: 1px solid #c2b4a9;
+  margin-right: 20px;
+  min-height: 160px;
+}
+
+
+ 
   
   /*------------------------------------
     File for your custom SCSS style
