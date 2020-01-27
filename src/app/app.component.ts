@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './services/auth_service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'hrms';
-  isLoginCom:boolean;
+  isActive:boolean;
+  loggedInUser:any;
+  constructor(private authservice:AuthService) { }
   ngOnInit(){
-    this.isLoginCom=JSON.parse(sessionStorage.getItem("isLoginCom"));
+    this.authservice.$isLoggedIn.subscribe(data => {
+      this.isActive = data['isActive'];
+   this.loggedInUser=data['userId'];
+    });
   }
 }

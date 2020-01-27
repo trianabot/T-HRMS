@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { AuthService } from 'src/app/services/auth_service/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,12 +13,17 @@ belldata = false;
 circledata = false;
 userdata = false;
 isLoginCom=false;
-  constructor() { }
+isActive:boolean;
+loggedInUser:any;
+  constructor(private authservice:AuthService) { }
 
   ngOnInit() {
     // this.dropdown();
-   this.isLoginCom=JSON.parse(sessionStorage.getItem("isLoginCom"));
-   console.log("header",this.isLoginCom);
+   
+   this.authservice.$isLoggedIn.subscribe(data => {
+    this.isActive = data['isActive'];
+ this.loggedInUser=data['userId'];
+  });
   }
   clickEvent(){
     this.show = true;

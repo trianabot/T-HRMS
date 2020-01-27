@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpBackend } from '@angular/common/http';
+import { EventEmitter } from '@angular/core';
 
 @Injectable()
 export class AuthService {
+  //$isLoggedIn = new EventEmitter()<any>();
+  $isLoggedIn: EventEmitter<any> = new EventEmitter<any>();
 
+  user:any;
+
+  
   constructor(private http: HttpClient,httpbackend: HttpBackend) {
     this.http = new HttpClient(httpbackend);
   }
-  addService(data){
+  setUserName(data) {
+    this.$isLoggedIn.emit(data);
+  }
+  userLogin(data){
     return this.http.post('http://localhost:2020/user/login',data);
   }
   getuserrole(){
