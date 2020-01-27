@@ -6,7 +6,7 @@
       </a>
     </div>
 
-    <div class="u-header-middle" (click) = "header()">
+    <div *ngIf="isLoginCom" class="u-header-middle" (click) = "header()">
       <a class="js-sidebar-invoker u-sidebar-invoker" href="#!" data-is-close-all-except-this="true" data-target="#sidebar">
         <i class="fa fa-bars u-sidebar-invoker__icon--open"></i>
         <i class="fa fa-times u-sidebar-invoker__icon--close"></i>
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="u-header-right">
+    <div *ngIf="isLoginCom" class="u-header-right">
       <!-- Activities -->
       <div class="dropdown mr-4">
         <div (click)="clickEvent()" >

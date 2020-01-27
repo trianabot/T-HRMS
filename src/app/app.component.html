@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="u-main">
-  <app-sidebar></app-sidebar>
+  <app-sidebar *ngIf="isLoginCom"></app-sidebar>
   <div class="u-content">
     <div class="u-body">
       <router-outlet></router-outlet>

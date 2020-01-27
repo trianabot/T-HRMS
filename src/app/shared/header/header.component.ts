@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +11,13 @@ show =  false;
 belldata = false;
 circledata = false;
 userdata = false;
+isLoginCom=false;
   constructor() { }
 
   ngOnInit() {
     // this.dropdown();
+   this.isLoginCom=JSON.parse(sessionStorage.getItem("isLoginCom"));
+   console.log("header",this.isLoginCom);
   }
   clickEvent(){
     this.show = true;
