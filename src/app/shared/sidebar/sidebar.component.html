@@ -45,9 +45,16 @@
           <!-- End Base UI -->
   
           <!-- UI Components -->
-          <a class="u-sidebar-nav-menu__link" href="#!" data-target="#subMenu1">
+          <a class="u-sidebar-nav-menu__link"  data-target="#subMenu1">
             <i class="far fa-paper-plane u-sidebar-nav-menu__item-icon"></i>
             <span class="u-sidebar-nav-menu__item-title">Departments</span>
+            <!-- <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i> -->
+            <span class="u-sidebar-nav-menu__indicator"></span>
+          </a>
+          <a class="u-sidebar-nav-menu__link" data-target="#subMenu1">
+            <!-- <i class="far fa-paper-plane u-sidebar-nav-menu__item-icon"></i> -->
+            <i class="fa fa-building-o u-sidebar-nav-menu__item-icon" aria-hidden="true"></i>
+            <span class="u-sidebar-nav-menu__item-title">HR Profile</span>
             <!-- <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i> -->
             <span class="u-sidebar-nav-menu__indicator"></span>
           </a>
@@ -102,17 +109,17 @@
             <a class="u-sidebar-nav-menu__link" >
               <i class="far fa-edit u-sidebar-nav-menu__item-icon"></i>
               <span class="u-sidebar-nav-menu__item-title">Payroll</span>
-              <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
+              <!-- <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i> -->
               <!-- <span class="u-sidebar-nav-menu__indicator"></span> -->
             </a>
-            <ul id="subMenu2" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" *ngIf = "accountdata" style="display: block;">
+            <!-- <ul id="subMenu2" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" *ngIf = "accountdata" style="display: block;">
               <li class="u-sidebar-nav-menu__item">
                 <a class="u-sidebar-nav-menu__link" href="./account-profile.html">
                   <span class="u-sidebar-nav-menu__item-icon">P</span>
                   <span class="u-sidebar-nav-menu__item-title">HR Profile</span>
                 </a>
               </li>
-              </ul>
+              </ul> -->
           </li>
           <!-- End Forms -->
   
@@ -130,6 +137,16 @@
             <a class="u-sidebar-nav-menu__link"  data-target="#subMenu2">
               <i class="far fa-user-circle u-sidebar-nav-menu__item-icon"></i>
               <span class="u-sidebar-nav-menu__item-title">Clients</span>
+              <!-- <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i> -->
+              <span class="u-sidebar-nav-menu__indicator"></span>
+            </a>
+            
+          </li>
+          <li class="u-sidebar-nav-menu__item" >
+            <a class="u-sidebar-nav-menu__link"  data-target="#subMenu2">
+              <!-- <i class="far fa-user-circle u-sidebar-nav-menu__item-icon"></i> -->
+              <i class="fa fa-cog  u-sidebar-nav-menu__item-icon" aria-hidden="true"></i>
+              <span class="u-sidebar-nav-menu__item-title">Settings</span>
               <!-- <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i> -->
               <span class="u-sidebar-nav-menu__indicator"></span>
             </a>

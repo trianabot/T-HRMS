@@ -9,6 +9,11 @@ import { AuthService } from 'src/app/services/auth_service/auth.service';
 })
 export class HeaderComponent implements OnInit {
 show =  false;
+message = false;
+bellinfo = false;
+circleinfo = false;
+userinfo = false;
+
 belldata = false;
 circledata = false;
 userdata = false;
@@ -26,10 +31,20 @@ loggedInUser:any;
   });
   }
   clickEvent(){
-    this.show = true;
-    this.belldata = false;
-    this.circledata = false;
-    this.userdata = false;
+    this.message = ! this.message;
+    if(this.message){
+      this.show = true;
+      this.belldata = false;
+      this.circledata = false;
+      this.userdata = false;
+    }
+    else{
+      this.show = false;
+      this.belldata = false;
+      this.circledata = false;
+      this.userdata = false;
+    }
+    
     // alert("hi");
   }
   clear(){
@@ -37,21 +52,51 @@ loggedInUser:any;
     this.belldata = false;
   }
   bell(){
-    this.belldata = true;
+    this.bellinfo =! this.bellinfo;
+    if(this.bellinfo){
+      this.belldata = true;
+      this.userdata = false;
+      this.show = false;
+      this.circledata = false;
+    }
+    else{
+      this.belldata = false;
     this.userdata = false;
     this.show = false;
     this.circledata = false;
+    }
+    
   }
   circle(){
-    this.circledata = true;
-    this.show = false;
-    this.userdata = false;
-    this.belldata = false;
+this.circleinfo = ! this.circleinfo;
+if(this.circleinfo){
+  this.circledata = true;
+  this.show = false;
+  this.userdata = false;
+  this.belldata = false;
+}
+else{
+  this.circledata = false;
+  this.show = false;
+  this.userdata = false;
+  this.belldata = false;
+}
+   
   }
   userprofile(){
-    this.circledata = false;
+    this.userinfo = ! this.userinfo;
+    if(this.userinfo){
+      this.circledata = false;
+      this.show = false;
+      this.belldata = false;
+      this.userdata = true;
+    }
+    else{
+      this.circledata = false;
     this.show = false;
     this.belldata = false;
-    this.userdata = true;
+    this.userdata = false;
+    }
+    
   }
 }

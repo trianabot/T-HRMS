@@ -10314,6 +10314,7 @@
     position: relative;
     left: 0;
     z-index: 3;
+    top: 40px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -10341,7 +10342,7 @@
   @media (min-width: 768px) {
     .u-main {
       min-height: calc(100% - 3.75rem);
-      padding-left: 32rem;
+      padding-left: 14rem;
     }
     body.tablet-mode .u-main,
     body.side-nav-on-action .u-main {
@@ -10674,7 +10675,7 @@
   
   @media (min-width: 992px) {
     .u-header {
-      position: static;
+      position: fixed;
       min-height: 3.75rem;
     }
     .u-header-left {
@@ -11078,7 +11079,8 @@
   }
   
   .u-sidebar {
-    position: absolute;
+    position: fixed;
+    top: 60px !important;
     top: -3.75rem;
     width: 100%;
     height: calc(100% + 3.75rem);
@@ -11617,6 +11619,19 @@
   border-right: 1px solid #c2b4a9;
   margin-right: 20px;
   min-height: 160px;
+}
+
+.u-sidebar-nav-menu__link.active, .u-sidebar-nav-menu--top-level > .u-sidebar-nav--opened > .u-sidebar-nav-menu__link {
+  color: #fff;
+  background-color: #6b15b6;
+}
+.pbd_Creports{
+  padding: 20px;
+  
+}
+.u-login-form{
+  margin: 0px auto;
+  padding-top: 120px;
 }
 
 
