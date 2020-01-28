@@ -15,6 +15,10 @@ import { HTTP_INTERCEPTORS ,HttpClientModule} from '@angular/common/http';
 import { IntersepterService } from './services/auth_service/intersepter.service';
 import { AuthService } from './services/auth_service/auth.service';
 import { NotfoundComponent } from './errorpage/notfound/notfound.component';
+import { ClientComponent } from './client/client.component';
+import { DeptComponent } from './dept/dept.component';
+import { ProjectComponent } from './project/project.component';
+import { EmpComponent } from './emp/emp.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { NotfoundComponent } from './errorpage/notfound/notfound.component';
     LoginComponent,
     ConfirmationComponent,
     RegistrtaionComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ClientComponent,
+    DeptComponent,
+    ProjectComponent,
+    EmpComponent
   ],
   imports: [
     BrowserModule,

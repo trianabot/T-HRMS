@@ -12,6 +12,8 @@ export class AppComponent implements OnInit{
   loggedInUser:any;
   constructor(private authservice:AuthService) { }
   ngOnInit(){
+    this.isActive=JSON.parse(sessionStorage.getItem("isActive"));
+    this.loggedInUser=sessionStorage.getItem("userId");
     this.authservice.$isLoggedIn.subscribe(data => {
       this.isActive = data['isActive'];
    this.loggedInUser=data['userId'];

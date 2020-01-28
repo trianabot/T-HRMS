@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { AuthService } from 'src/app/services/auth_service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -20,11 +21,12 @@ userdata = false;
 isLoginCom=false;
 isActive:boolean;
 loggedInUser:any;
-  constructor(private authservice:AuthService) { }
+  constructor(private authservice:AuthService,private router:Router) { }
 
   ngOnInit() {
     // this.dropdown();
-   
+    this.isActive=JSON.parse(sessionStorage.getItem("isActive"));
+    this.loggedInUser=sessionStorage.getItem("userId");
    this.authservice.$isLoggedIn.subscribe(data => {
     this.isActive = data['isActive'];
  this.loggedInUser=data['userId'];
@@ -98,5 +100,18 @@ else{
     this.userdata = false;
     }
     
+  }
+  logout(){
+    let obj ={
+      emailId:sessionStorage.getItem("emailId"),
+      isActive:JSON.parse(sessionStorage.getItem("isActive")),
+    }
+    this.authservice.logout(obj).subscribe(data=>{
+      sessionStorage.clear();
+      console.log("logout successfully");
+      this.router.navigate(['/login'])
+    },err=>{
+      console.log("error logout ");
+    })
   }
 }

@@ -25,4 +25,8 @@ export class AuthService {
   register(data){
     return this.http.post('http://localhost:2020/user/registeruser',data);
   }
+
+  logout(data){
+    return this.http.post('http://localhost:2020/user/logout',data);
+  }
 }

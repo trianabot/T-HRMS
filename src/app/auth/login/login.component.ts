@@ -27,10 +27,13 @@ export class LoginComponent implements OnInit {
     this.authservice.userLogin(this.loginForm.value).subscribe(data=>{
      if(data['userData'].isActive==true){
      sessionStorage.setItem("isActive",JSON.stringify(data['userData'].isActive));
+     sessionStorage.setItem("userId",data['userData'].userId);
+     sessionStorage.setItem("emailId",data['userData'].emailId);
      let sendData={
       isActive: data['userData'].isActive,
       userId:data['userData'].userId
     }
+
     this.authservice.setUserName(sendData);
      this.rouetr.navigate(['/dashboard']);
      }else{

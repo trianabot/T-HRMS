@@ -5,13 +5,21 @@ import { ConfirmationComponent } from './auth/confirmation/confirmation.componen
 import { RegistrtaionComponent } from './auth/registrtaion/registrtaion.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotfoundComponent } from './errorpage/notfound/notfound.component';
-
+import { ClientComponent } from './client/client.component';
+import { DeptComponent } from './dept/dept.component';
+import { ProjectComponent } from './project/project.component';
+import { EmpComponent } from './emp/emp.component';
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'registration',component:RegistrtaionComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'confirmation',component:ConfirmationComponent},
-  {path:'errorpage',component:NotfoundComponent}
+  {path:'errorpage',component:NotfoundComponent},
+  {path:'login',component:LoginComponent},
+  {path:'client',component:ClientComponent},
+  {path:'dept',component:DeptComponent},
+  {path:'project',component:ProjectComponent},
+  {path:'emp',component:EmpComponent}
 ];
 
 @NgModule({
