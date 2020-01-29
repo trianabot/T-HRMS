@@ -1,19 +1,20 @@
 <header class="u-header fixed-top">
-    <div class="u-header-left">
+    <div class="u-header-left" id="change">
       <a class="u-header-logo" href="index.html">
         <img class="u-logo-desktop" src="../../../assets/img/800X500/logo.png" width="160" alt="Stream Dashboard">
         <img class="img-fluid u-logo-mobile" src="../../../assets/img/800X500/logo.png" width="50" alt="Stream Dashboard">
       </a>
+      <!-- <app-sidebar></app-sidebar> -->
     </div>
 
-    <div *ngIf="isActive" class="u-header-middle" (click) = "header()">
-      <a class="js-sidebar-invoker u-sidebar-invoker" href="#!" data-is-close-all-except-this="true" data-target="#sidebar">
+    <div *ngIf="isActive" class="u-header-middle" (click) = "header()" >
+      <a class="js-sidebar-invoker u-sidebar-invoker"  data-is-close-all-except-this="true" data-target="#sidebar">
         <i class="fa fa-bars u-sidebar-invoker__icon--open"></i>
         <i class="fa fa-times u-sidebar-invoker__icon--close"></i>
       </a>
 
       <div class="u-header-search" data-search-mobile-invoker="#headerSearchMobileInvoker" data-search-target="#headerSearch">
-        <a id="headerSearchMobileInvoker" class="btn btn-link input-group-prepend u-header-search__mobile-invoker" href="#!">
+        <a id="headerSearchMobileInvoker" class="btn btn-link input-group-prepend u-header-search__mobile-invoker" >
           <i class="fa fa-search"></i>
         </a>
 

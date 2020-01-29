@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { AuthService } from 'src/app/services/auth_service/auth.service';
 import { Router } from '@angular/router';
+import { NaveEvetsService } from 'src/app/services/nave-evets.service';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,9 @@ message = false;
 bellinfo = false;
 circleinfo = false;
 userinfo = false;
+success = false;
+
+public sideNavCloseEvent:Event;
 
 belldata = false;
 circledata = false;
@@ -21,7 +25,7 @@ userdata = false;
 isLoginCom=false;
 isActive:boolean;
 loggedInUser:any;
-  constructor(private authservice:AuthService,private router:Router) { }
+  constructor(private authservice:AuthService,private router:Router, private naveCloseService:NaveEvetsService) { }
 
   ngOnInit() {
     // this.dropdown();
@@ -101,7 +105,18 @@ else{
     }
     
   }
-  logout(){
+  header(){
+  
+    this.success = ! this.success;
+    if(this.success){
+      document.getElementById("change").style.width = "4rem";
+    }
+    else{
+      document.getElementById("change").style.width = "15rem";
+    }
+    this.naveCloseService.closeNaveAction(this.success);
+  }
+logout(){
     let obj ={
       emailId:sessionStorage.getItem("emailId"),
       isActive:JSON.parse(sessionStorage.getItem("isActive")),

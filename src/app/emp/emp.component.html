@@ -1,2 +1,165 @@
-<p>emp works!</p>
-<button type="submit" class="btn btn-primary pull-right">On bording form</button>
+<!-- <p>emp works!</p>
+<button type="submit" class="btn btn-primary pull-right">On bording form</button> -->
+<div class="" style="margin-top: 0px;">
+    <!-- start: TEXT FIELDS PANEL -->
+    <div class="tabbable EmployeesMargin">
+        <ul id="EmpCenterTab" class="nav nav-tabs tab-bricky">
+            <li class="active">
+                <a data-toggle="tab" class="Employee">Employee Master
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" class="Attendance">Employee Taxes
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" class="Adjustments">Manage Exits
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" class="Control">View Payslips
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" class="More">More
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane in active" id="tab1">
+
+                <div id="ctl00_body_Employeetab1row1" class="row">
+                    <div class="col-md-3">
+                        <div id="ctl00_body_pnlcode">
+
+                            <div class="input_search">
+                                <input name="ctl00$body$txtSearch" type="text"
+                                    onchange="javascript:setTimeout('__doPostBack(\'ctl00$body$txtSearch\',\'\')', 0)"
+                                    onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;"
+                                    id="ctl00_body_txtSearch" class="form-control searchTextBox" autocomplete="off">
+                                <button><i id="ctl00_body_searchicon" class="fa fa-search"></i></button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="filtter">
+                            <div class="btn-group">
+                                <button id="ctl00_body_employeeFilterModal"
+                                    class="btn btn-default dropdown-toggle show-filter" data-toggle="modal"
+                                    data-append="form1" data-target="#employeeFilter">
+                                    Filter <span class="caret"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <label>
+                            <div id="ctl00_body_ctl03">
+
+                                <span id="ctl00_body_lblFilterName1" style="display:inline-block;width:100%;"></span>
+
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-md-3 pull-right">
+                        <div class="col-md pull-right">
+                            <div class="filtter">
+                                <div class="btn-group gearFilter">
+                                    <a id="EmployeeFilter" style="text-decoration: none"><i class="harmony_gear"></i>
+                                    </a>
+                                    <ul class="gear_dropdown" id="custom_dropdown" role="menu">
+                                        <div id="Div1">
+                                            <div id="ctl00_body_UpdatePanel6">
+
+                                                <div class="">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <input id="ctl00_body_chkIsActive" type="checkbox"
+                                                                name="ctl00$body$chkIsActive"
+                                                                onclick="javascript:setTimeout('__doPostBack(\'ctl00$body$chkIsActive\',\'\')', 0)"><label
+                                                                for="ctl00_body_chkIsActive">Include inactive</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        &nbsp;
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label for="basic">
+                                                                    Apply to all tables
+                                                                </label>
+                                                                <select name="ctl00$body$ddlFilter"
+                                                                    onchange="javascript:setTimeout('__doPostBack(\'ctl00$body$ddlFilter\',\'\')', 0)"
+                                                                    id="ctl00_body_ddlFilter"
+                                                                    class="form-control select-default"
+                                                                    form="aspnetForm">
+                                                                    <option selected="selected" value="10">10 items
+                                                                    </option>
+                                                                    <option value="20">20 items</option>
+                                                                    <option value="50">50 items</option>
+                                                                    <option value="100">100 items</option>
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashDrop pull-right">
+                            <a href="javascript: void(0);" id="ctl00_body_btnAddEmploye"
+                                class="btn btn-default pull-left" routerLink="/addemployee">Add employee</a>
+                            <a type="button" class="btn btn-default_small dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </a>
+                            <ul id="ctl00_body_ul5" class="dropdown-menu" role="menu">
+                                <li style="text-align: left; width: 195px;">
+                                    <a href="ImportEmployeeWithMaster.aspx">Import New Joinees</a>
+                                </li>
+
+                                <li style="text-align: left">
+                                    <a href="EmployeeExport.aspx">Export Employee Master</a>
+                                </li>
+                                <li style="text-align: left">
+                                    <a href="ManageEmployeeFields.aspx">Bulk Edit Employee Master</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="ctl00_body_Employeetab1row2" class="row">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <div id="ctl00_body_ctl06">
+                                <div>
+                                    <table class="table table-bordered table-hover" cellspacing="0" rules="all"
+                                        border="1" id="ctl00_body_gvEmp" style="width:100%;border-collapse:collapse;">
+                                        <tbody>
+                                            <tr style="color:#6E8BA8;background-color:#E3EAF3;">
+                                                <th scope="col">CODE</th>
+                                                <th scope="col">NAME</th>
+                                                <th scope="col">JOINING DATE</th>
+                                                <th scope="col">JOB TYPE</th>
+                                                <th scope="col">DEPARTMENT</th>
+                                                <th scope="col">DESIGNATION</th>
+                                                <th align="center" scope="col">&nbsp;</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1577 @@
+<div class="blue_header">
+    <span id="ctl00_lblHeader" class="pull-left">Create Employee</span>
+    <span class="xclose"><a href="javascript:void(0);" onclick="closeTrowser();"><i class="fa fa-times"></i></a></span>
+</div>
+<div class="pageWizard_container">
+
+    <script type="text/javascript">
+        //<![CDATA[
+        Sys.WebForms.PageRequestManager._initialize('ctl00$body$ToolkitScriptManager1', 'aspnetForm', ['tctl00$body$updPanel', '', 'tctl00$body$upfiluremessageforcode', '', 'tctl00$body$upPFNO', '', 'tctl00$body$upESINO', '', 'tctl00$body$upPANNo', '', 'tctl00$body$UpdatePanel9', ''], [], [], 90, 'ctl00');
+//]]>
+    </script>
+
+    <input type="hidden" name="ctl00$body$hdnCompanyType" id="ctl00_body_hdnCompanyType" value="0">
+    <div class="">
+        <div class="row ">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12 mt15">
+                        <br>
+                        <br>
+                        <div id="ctl00_body_Panel1">
+
+                            <table cellspacing="0" cellpadding="0" id="ctl00_body_EmployeeWizard"
+                                style="width:100%;border-collapse:collapse;">
+                                <tbody>
+                                    <tr>
+                                        <td style="height:100%;">
+                                            <table id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList"
+                                                class="WizardHeader" cellspacing="0"
+                                                style="width:100%;border-collapse:collapse;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div value="personal" [(ngModel)]="personal"
+                                                                (click)="personalinfo('personal')">
+                                                                <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_divStep"
+                                                                    class="ActiveStepNumber">
+                                                                    <span
+                                                                        id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_lblStep1">1</span>
+                                                                </div>
+                                                                <br>
+                                                                <a id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_SideBarButton"
+                                                                    class="WizardStepDesc"
+                                                                    href="javascript:__doPostBack('ctl00$body$EmployeeWizard$SideBarContainer$SideBarList$ctl00$SideBarButton','')"
+                                                                    style="text-decoration:none;">PERSONAL DETAILS</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div value="OFFICIAL" [(ngModel)]="OFFICIAL"
+                                                                (click)="personalinfo('OFFICIAL')">
+                                                                <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl01_divStep"
+                                                                    class="InActiveStepNumber">
+                                                                    <span
+                                                                        id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl01_lblStep">2</span>
+                                                                </div>
+                                                                <br>
+                                                                <a id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl01_SideBarButton"
+                                                                    disabled="disabled" class="WizardStepDesc">OFFICIAL
+                                                                    DETAILS</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div value="pf" [(ngModel)]="pf"
+                                                                (click)="personalinfo('pf')">
+                                                                <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl02_divStep"
+                                                                    class="InActiveStepNumber">
+                                                                    <span
+                                                                        id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl02_lblStep">3</span>
+                                                                </div>
+                                                                <br>
+                                                                <a id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl02_SideBarButton"
+                                                                    disabled="disabled" class="WizardStepDesc">PF AND
+                                                                    ESI</a>
+                                                            </div>
+                                                        </td>
+                                                        <!-- <td>
+                                                            <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl03_divStep"
+                                                                class="InActiveStepNumber">
+                                                                <span
+                                                                    id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl03_lblStep">4</span>
+                                                            </div>
+                                                            <br>
+                                                            <a id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl03_SideBarButton"
+                                                                disabled="disabled" class="WizardStepDesc">LEAVE
+                                                                DETAILS</a>
+                                                        </td> -->
+                                                        <td>
+                                                            <div value="others" [(ngModel)]="others"
+                                                                (click)="personalinfo('others')">
+                                                                <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl04_divStep"
+                                                                    class="InActiveStepNumber">
+                                                                    <span
+                                                                        id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl04_lblStep">4</span>
+                                                                </div>
+                                                                <br>
+                                                                <a id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl04_SideBarButton"
+                                                                    disabled="disabled" class="WizardStepDesc">OTHER
+                                                                    INFO</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div value="salary" [(ngModel)]="salary"
+                                                                (click)="personalinfo('salary')">
+                                                                <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl05_divStep"
+                                                                    class="InActiveStepNumber">
+                                                                    <span
+                                                                        id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl05_lblStep">5</span>
+                                                                </div>
+                                                                <br>
+                                                                <a id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl05_SideBarButton"
+                                                                    disabled="disabled" class="WizardStepDesc">SALARY
+                                                                    DETAILS</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="height:100%;">
+                                            <table cellspacing="0" cellpadding="0"
+                                                style="height:100%;width:100%;border-collapse:collapse;">
+                                                <tbody>
+                                                    <tr style="height:100%;">
+                                                        <td>
+                                                            <div>
+                                                                <br>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="col-md-12">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <br>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div
+                                                                id="ctl00_body_EmployeeWizard_StartNavigationTemplateContainerID_panelStart">
+
+                                                                <div class="EmpWizardblue_footer">
+
+                                                                    <input type="submit"
+                                                                        name="ctl00$body$EmployeeWizard$StartNavigationTemplateContainerID$btnNext"
+                                                                        value="Next"
+                                                                        id="ctl00_body_EmployeeWizard_StartNavigationTemplateContainerID_btnNext"
+                                                                        class="btn btn-blue full right">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Personal data-->
+        <div *ngIf="personal">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <span id="ctl00_body_EmployeeWizard_lblCode" style="color:Black;">Code</span><span
+                                class="required"> *</span>
+                            <input name="ctl00$body$EmployeeWizard$txtCode" type="text" maxlength="20"
+                                id="ctl00_body_EmployeeWizard_txtCode" class="form-control" style="color:Black;">
+
+                        </div>
+                        <div class="form-group">
+                            <label>Employee name <span class="required">*</span></label>
+                            <input name="ctl00$body$EmployeeWizard$txtName" type="text"
+                                id="ctl00_body_EmployeeWizard_txtName" maxlength="45" class="form-control">
+                            <span id="ctl00_body_EmployeeWizard_RequiredFieldValidator1" class="error"
+                                style="color:Red;display:none;">Enter
+                                employee name</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of birth<span class="required">*</span></label>
+                            <div class="date_grop">
+                                <div class="date date-picker">
+                                    <input name="ctl00$body$EmployeeWizard$txtDob" type="text"
+                                        id="ctl00_body_EmployeeWizard_txtDob" class="date_field" style="width:92%;">
+                                    <span class="add-on"><i class="cal_icon" id="cal"></i></span>
+                                    <br>
+                                </div>
+                                <br>
+                                <span id="ctl00_body_EmployeeWizard_rfvtxtDob" class="error"
+                                    style="color:Red;display:none;">Enter
+                                    date of birth</span>
+                                <span id="ctl00_body_EmployeeWizard_cvdob" class="error"
+                                    style="color:Red;visibility:hidden;">Employee
+                                    is minor to access the
+                                    system</span>
+
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label><br>
+                            <input name="ctl00$body$EmployeeWizard$txtAddress" type="text"
+                                id="ctl00_body_EmployeeWizard_txtAddress" maxlength="100" class="form-control">
+                            &nbsp;
+
+                            <span id="ctl00_body_EmployeeWizard_RegularExpressionValidator1" class="error"
+                                style="color:Red;display:none;">Please
+                                enter maxium 100 characters for
+                                address</span>
+                            <input name="ctl00$body$EmployeeWizard$txtAddress2" type="text"
+                                id="ctl00_body_EmployeeWizard_txtAddress2" maxlength="100" class="form-control">
+                            <span id="ctl00_body_EmployeeWizard_RegularExpressionValidator2" class="error"
+                                style="color:Red;display:none;">Please
+                                enter maxium 100 characters for
+                                address</span>
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input name="ctl00$body$EmployeeWizard$txtCity" type="text"
+                                id="ctl00_body_EmployeeWizard_txtCity" maxlength="50" class="form-control">
+
+
+                        </div>
+                        <div class="form-group">
+                            <label>State </label>
+                            <select name="ctl00$body$EmployeeWizard$ddlState" id="ctl00_body_EmployeeWizard_ddlState"
+                                class="form-control search-default">
+                                <option value="-- Select --">--
+                                    Select --</option>
+                                <option value="1">Karnataka</option>
+                                <option value="2">West Bengal
+                                </option>
+                                <option value="3">Tamilnadu</option>
+                                <option value="4">Maharashtra
+                                </option>
+                                <option value="5">Kerala</option>
+                                <option value="6">Delhi</option>
+                                <option value="7">Uttar Pradesh
+                                </option>
+                                <option value="8">Andhra Pradesh
+                                </option>
+                                <option value="9">Gujarat</option>
+                                <option value="10">Tamilnadu M
+                                    PT-Coimbatore</option>
+                                <option value="11">MAH</option>
+                                <option value="12">Odisha</option>
+                                <option value="13">Madhya Pradesh
+                                </option>
+                                <option value="14">Rajasthan
+                                </option>
+                                <option value="15">Punjab</option>
+                                <option value="16">Bihar</option>
+                                <option value="17">Jharkhand
+                                </option>
+                                <option value="18">Assam</option>
+                                <option value="19">Haryana</option>
+                                <option value="20">Chattisgarh
+                                </option>
+                                <option value="21">Jammu and Kashmir
+                                </option>
+                                <option value="22">Uttarakhand
+                                </option>
+                                <option value="23">Himachal Pradesh
+                                </option>
+                                <option value="24">Tripura</option>
+                                <option value="25">Meghalaya
+                                </option>
+                                <option value="26">Manipur</option>
+                                <option value="27">Nagaland</option>
+                                <option value="28">Goa</option>
+                                <option value="29">Arunachal Pradesh
+                                </option>
+                                <option value="30">Mizoram</option>
+                                <option value="31">Sikkim</option>
+                                <option value="32">Pondicherry
+                                </option>
+                                <option value="33">Tamilnadu M PT
+                                </option>
+                                <option value="34">Chandigarh
+                                </option>
+                                <option value="35">Andaman &amp;
+                                    Nicobar Islands</option>
+                                <option value="36"> Dadra &amp;
+                                    Nagar Haveli</option>
+                                <option value="37">Diu Daman
+                                </option>
+                                <option value="38">Lakshadweep
+                                </option>
+                                <option value="39">Telangana
+                                </option>
+                                <option value="40">Tamilnadu M PT -
+                                    Thanjavur</option>
+                                <option value="41">Tamilnadu M PT -
+                                    Krishnagiri</option>
+                                <option value="42">Tamilnadu M PT -
+                                    Pudhukottai</option>
+                                <option value="43">Tamil Nadu M PT -
+                                    Tiruporur</option>
+                                <option value="44">Out of India
+                                </option>
+                                <option value="45">Non PT State
+                                </option>
+                                <option value="46">Tamilnadu M PT -
+                                    Salem</option>
+                                <option value="47">Tamilnadu -
+                                    chennai</option>
+                                <option value="48">Pondicherry_MPT
+                                </option>
+                                <option value="49">Kerala HYL
+                                </option>
+                                <option value="50">Tamilnadu
+                                    Dharmapuri - Monthly</option>
+                                <option value="51">Tamilnadu
+                                    Dharmapuri - HalfYearly</option>
+                                <option value="52">Punjab_PT41666
+                                </option>
+                                <option value="55">Tamilnadu Erode
+                                </option>
+                                <option value="56">Tamilnadu ErodeHY
+                                </option>
+                                <option value="57">Coimbatore
+                                    Half-Yearly</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Tax status</label>
+                            <select name="ctl00$body$EmployeeWizard$ddlTaxStatus"
+                                id="ctl00_body_EmployeeWizard_ddlTaxStatus" tabindex="37"
+                                class="form-control search-default">
+                                <option value="-- Select --">--
+                                    Select --</option>
+                                <option value="113">Resident
+                                </option>
+                                <option value="114">NRI</option>
+                                <option value="115">Expat</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Gender <span class="required">*</span></label>
+                            <select name="ctl00$body$EmployeeWizard$ddlGender" id="ctl00_body_EmployeeWizard_ddlGender"
+                                class="form-control Select-default">
+                                <option value="-- Select --">--
+                                    Select --</option>
+                                <option value="11">Male</option>
+                                <option value="12">Female</option>
+                                <option value="13">General</option>
+                            </select>
+                            <span id="ctl00_body_EmployeeWizard_RequiredFieldValidator2" class="error"
+                                style="color:Red;display:none;">Please
+                                select gender</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email address </label>
+                            <input name="ctl00$body$EmployeeWizard$txtEmailid" type="text" maxlength="100"
+                                id="ctl00_body_EmployeeWizard_txtEmailid" class="form-control">
+
+                            <span id="ctl00_body_EmployeeWizard_revtxtEmailid" class="error"
+                                style="color:Red;display:none;">Invalid
+                                Email</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input name="ctl00$body$EmployeeWizard$txtPhone" type="text" maxlength="15"
+                                id="ctl00_body_EmployeeWizard_txtPhone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile</label>
+                            <input name="ctl00$body$EmployeeWizard$txtMobileNo" type="text" maxlength="15"
+                                id="ctl00_body_EmployeeWizard_txtMobileNo" class="form-control">
+
+                        </div>
+                        <div class="form-group">
+                            <label>Emergency number </label>
+                            <input name="ctl00$body$EmployeeWizard$txtEmergencyNo" type="text" maxlength="15"
+                                id="ctl00_body_EmployeeWizard_txtEmergencyNo" class="form-control">
+
+
+                        </div>
+                        <div class="form-group">
+                            <label>PAN</label>
+                            <input name="ctl00$body$EmployeeWizard$txtPANNumber" type="text" maxlength="10"
+                                id="ctl00_body_EmployeeWizard_txtPANNumber" class="form-control"
+                                onkeyup="this.value=this.value.toUpperCase()">
+
+                            <span id="ctl00_body_EmployeeWizard_CustomValidator1"
+                                style="color:Red;visibility:hidden;">invalid
+                                PAN no</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Aadhaar No</label>
+                            <input name="ctl00$body$EmployeeWizard$txtAdhar" type="text" maxlength="12"
+                                id="ctl00_body_EmployeeWizard_txtAdhar" class="form-control">
+
+                            <span id="ctl00_body_EmployeeWizard_CustomValidatorAdhar"
+                                style="color:Red;visibility:hidden;">invalid
+                                Aadhaar No</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-12">
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <div class="photo_holder">
+                                <img id="ctl00_body_EmployeeWizard_imgClient" src=""
+                                    style="height:120px;width:120px;border-width:0px;">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <input name="ctl00$body$EmployeeWizard$EmpLogo" type="file"
+                                id="ctl00_body_EmployeeWizard_EmpLogo" onchange="previewFile()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Personal data End-->
+        <!--Official Details-->
+        <div *ngIf="OFFICIAL">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <span id="ctl00_body_EmployeeWizard_lblStep2Title" class="StepTitle">Employee Name: vali</span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Joining date <span class="required">*</span></label>
+                            <div class="date_grop">
+                                <div class="date date-picker">
+                                    <input name="ctl00$body$EmployeeWizard$txtDateofJoin"
+                                        id="ctl00_body_EmployeeWizard_txtDateofJoin" class="date_field" type="text"
+                                        style="width: 92%;">
+                                    <span class="add-on"><i class="cal_icon" id="I1"></i></span>
+                                    <br>
+                                </div>
+                                <br>
+                                <span>
+                                    <span id="ctl00_body_EmployeeWizard_rfvtxtDateofJoin" class="error"
+                                        style="color:Red;display:none;">Enter date of join</span></span>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <br>
+                            <label>Job type </label>
+                            <select name="ctl00$body$EmployeeWizard$ddlJobType"
+                                id="ctl00_body_EmployeeWizard_ddlJobType" class="form-control search-default">
+                                <option selected="selected" value="-- Select --">-- Select --</option>
+                                <option value="14">Probation</option>
+                                <option value="15">Permanent</option>
+                                <option value="16">Contract</option>
+                                <option value="71">Consultant</option>
+
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label>Payment mode</label>
+                            <select name="ctl00$body$EmployeeWizard$ddlpaymentmode"
+                                id="ctl00_body_EmployeeWizard_ddlpaymentmode" class="form-control search-default">
+                                <option selected="selected" value="-- Select --">-- Select --</option>
+                                <option value="68">Bank Transfer</option>
+                                <option value="69">Cheque</option>
+                                <option value="70">Cash</option>
+
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label>Bank a/c number </label>
+                            <input name="ctl00$body$EmployeeWizard$txtBankNumb" type="text" maxlength="50"
+                                id="ctl00_body_EmployeeWizard_txtBankNumb" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input id="ctl00_body_EmployeeWizard_chkEnableESS" type="checkbox"
+                                name="ctl00$body$EmployeeWizard$chkEnableESS" checked="checked">
+                            <label>Enable ESS</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>
+                                Confirmation period
+                            </label>
+                            <input name="ctl00$body$EmployeeWizard$txtMonths" type="text" value="0" maxlength="2"
+                                id="ctl00_body_EmployeeWizard_txtMonths" class="form-control">
+
+
+
+                        </div>
+                        <div class="form-group">
+
+                            <label>Location <span class="required">*</span></label>
+                            <select name="ctl00$body$EmployeeWizard$ddlLocation"
+                                id="ctl00_body_EmployeeWizard_ddlLocation" class="form-control search-default">
+                                <option selected="selected" value="-- Select --">-- Select --</option>
+                                <option value="116809">Bangalore</option>
+
+                            </select>
+                            <span id="ctl00_body_EmployeeWizard_rfvddlLocation" class="error"
+                                style="color:Red;display:none;">Please select location</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Department </label>
+                            <select name="ctl00$body$EmployeeWizard$ddlDepartment"
+                                id="ctl00_body_EmployeeWizard_ddlDepartment" class="form-control search-default">
+                                <option selected="selected" value="-- Select --">-- Select --</option>
+                                <option value="1097503">Development</option>
+                                <option value="1097501">IT</option>
+                                <option value="1097504">Management</option>
+                                <option value="1097502">Sales and marketing</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Designation </label>
+                            <select name="ctl00$body$EmployeeWizard$ddlDesignation"
+                                id="ctl00_body_EmployeeWizard_ddlDesignation" class="form-control search-default">
+                                <option selected="selected" value="-- Select --">-- Select --</option>
+                                <option value="1097505">Architect</option>
+                                <option value="1097508">Project Manager</option>
+                                <option value="1097506">Sales Executive</option>
+                                <option value="1097507">Soft. Eng</option>
+                                <option value="1097513">Team Lead</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Level <span class="required"></span></label>
+                            <select name="ctl00$body$EmployeeWizard$ddlLevel" id="ctl00_body_EmployeeWizard_ddlLevel"
+                                class="form-control Select-default">
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Official Details End-->
+
+
+        <!--pf details-->
+        <div *ngIf="pf">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <span id="ctl00_body_EmployeeWizard_lblStep3Title" class="StepTitle">Employee Name: vali</span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>PF eligibility</label>
+                                <div class="checkbox">
+                                    <label>
+
+
+                                        <span class="grey"><input id="ctl00_body_EmployeeWizard_chkEmployeeHasPF"
+                                                type="checkbox" name="ctl00$body$EmployeeWizard$chkEmployeeHasPF"
+                                                onclick="EnablePF();"></span>
+                                        &nbsp; Employee has PF
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ctl00_body_EmployeeWizard_PF" hidden="">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <br>
+                                    <label>PF - UAN</label>
+                                    <input name="ctl00$body$EmployeeWizard$txtPFUAN" type="text" maxlength="12"
+                                        id="ctl00_body_EmployeeWizard_txtPFUAN" class="form-control emp_pf">
+
+                                    <span id="ctl00_body_EmployeeWizard_rexNumber" class="error"
+                                        style="color:Red;visibility:hidden;">Please enter the correct UAN. UAN length
+                                        can be 12 digits only</span>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label>PF Number</label>
+                                    <input name="ctl00$body$EmployeeWizard$txtPFNumber" type="text" maxlength="50"
+                                        id="ctl00_body_EmployeeWizard_txtPFNumber" class="form-control emp_pf">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <br>
+                                    <label>PF Enrollment Date</label>
+                                    <div class="date_grop">
+                                        <div class="date date-picker">
+                                            <input name="ctl00$body$EmployeeWizard$txtPFJoinDate" type="text"
+                                                id="ctl00_body_EmployeeWizard_txtPFJoinDate" class="TextBox"
+                                                style="width: 92%;">
+                                            <span class="add-on"><i class="cal_icon" id="I3"></i></span>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                <div class="col-md-12">
+                                    <br>
+                                    <label>EPF Number</label>
+                                    <input name="ctl00$body$EmployeeWizard$txtEPFNumber" type="text" maxlength="20"
+                                        id="ctl00_body_EmployeeWizard_txtEPFNumber" class="form-control emp_pf">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <br>
+                                    <label>Relationship</label>
+                                    <select name="ctl00$body$EmployeeWizard$ddlPfAtECR"
+                                        id="ctl00_body_EmployeeWizard_ddlPfAtECR" class="form-control search-default">
+                                        <option selected="selected" value=""></option>
+                                        <option value="Father">Father</option>
+                                        <option value="Spouse(Husband/Wife)">Spouse(Husband/Wife)</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <br>
+                                    <label>
+                                        <span
+                                            title="First time employees, joining employment on or after 1 September 2014 and having Basic salary exceeding INR 15,000 per month shall not be eligible for the Pension Scheme (EPS)"><input
+                                                id="ctl00_body_EmployeeWizard_chkEPSEntitle" type="checkbox"
+                                                name="ctl00$body$EmployeeWizard$chkEPSEntitle"><label
+                                                for="ctl00_body_EmployeeWizard_chkEPSEntitle">Entitled to
+                                                EPS</label></span>
+                                        &nbsp;
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label>
+
+                                        <br>
+                                        <br>
+
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <br>
+                                <label>ESI eligibility</label>
+                                <div class="checkbox">
+                                    <label>
+
+                                        <span class="grey"><input id="ctl00_body_EmployeeWizard_chkEmployeeHasESI"
+                                                type="checkbox" name="ctl00$body$EmployeeWizard$chkEmployeeHasESI"
+                                                onclick="EnableESI();"></span>
+                                        &nbsp;
+                                        Employee has ESI
+                                    </label>
+                                </div>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div id="ctl00_body_EmployeeWizard_ESI" class="col-md-12" hidden="">
+                                <label>ESI Number</label>
+                                <input name="ctl00$body$EmployeeWizard$txtESINumber" type="text" maxlength="15"
+                                    id="ctl00_body_EmployeeWizard_txtESINumber" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <br>
+            </div>
+        </div>
+        <!--Pf Details End-->
+
+
+        <!--Other info-->
+
+        <!--Other info-->
+        <!--salary info-->
+
+        <div *ngIf="salary">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <span id="ctl00_body_EmployeeWizard_lblStep6Title" class="StepTitle"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label><span class="required">*</span> CTC (annual)</label>
+
+                            <input name="ctl00$body$EmployeeWizard$txtCTC" type="text"
+                                id="ctl00_body_EmployeeWizard_txtCTC" class="form-control">
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>FBP</label>
+                            <input name="ctl00$body$EmployeeWizard$txtFbp" type="text"
+                                id="ctl00_body_EmployeeWizard_txtFbp" class="form-control">
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Variable Pay</label>
+                            <input name="ctl00$body$EmployeeWizard$txtVariablePay" type="text"
+                                id="ctl00_body_EmployeeWizard_txtVariablePay" class="form-control">
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="col-lg-11">
+                                <label>&nbsp; </label>
+                            </div>
+
+                            <input type="button" name="ctl00$body$EmployeeWizard$btnCalculate" value="Calculate"
+                                id="ctl00_body_EmployeeWizard_btnCalculate" class="btn btn-default">
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="col-lg-11">
+                                <div class="checkbox">
+                                    <label>
+                                        <div class="icheckbox_minimal-grey" style="position: relative;"><input
+                                                name="ctl00$body$EmployeeWizard$chkCtc" type="checkbox"
+                                                id="ctl00_body_EmployeeWizard_chkCtc" onserverclick="ChckedChanged"
+                                                text="Display CTC-based components" class="grey"
+                                                style="position: absolute; top: -10%; left: -10%; display: block; width: 120%; height: 120%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins
+                                                class="iCheck-helper"
+                                                style="position: absolute; top: -10%; left: -10%; display: block; width: 120%; height: 120%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                        </div>
+                                        Display CTC-based components &nbsp;&nbsp; &nbsp; &nbsp;
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div id="ctl00_body_EmployeeWizard_UpdatePanel4">
+
+                            <div class="table-responsive">
+                                <div>
+                                    <table class="table table-bordered table-hover" cellspacing="0" rules="all"
+                                        border="1" id="ctl00_body_EmployeeWizard_gvSalary"
+                                        style="width:99%;border-collapse:collapse;">
+                                        <tbody>
+                                            <tr style="color:#6E8BA8;background-color:#E3EAF3;">
+                                                <th scope="col">
+                                                    <input id="chkBoxAll1" type="checkbox"
+                                                        onclick="checkAllBoxes1()">&nbsp;<span
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl01_lblCheck1"></span>
+                                                </th>
+                                                <th align="left" scope="col">PAY TYPE</th>
+                                                <th align="left" scope="col">FORMULA</th>
+                                                <th align="right" scope="col">MONTHLY</th>
+                                                <th align="right" scope="col">ANNUAL</th>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl02_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl02$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl02$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl02_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl02$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl02_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl02$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl02_hdnpyId"
+                                                        value="1465322">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl02$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl02_abbr"
+                                                        value="BASIC">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl02_lblpy"
+                                                        form="aspnetForm">Basic</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl02_lblFrml"
+                                                        form="aspnetForm"></span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl02$txtamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl02_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl02_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl02_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl02$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl02_hdn_calTyp"
+                                                        value="39">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl02$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl02_hdn_ctcbased"
+                                                        value="True">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl02$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl02_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl03_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl03$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl03$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl03_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl03$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl03_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl03$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl03_hdnpyId"
+                                                        value="1465323">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl03$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl03_abbr" value="HRA">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl03_lblpy"
+                                                        form="aspnetForm">House Rent Allowance</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl03_lblFrml"
+                                                        form="aspnetForm">BASIC*50%</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl03$txtamt"
+                                                        type="text" maxlength="15" readonly="readonly"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl03_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl03_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl03_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl03$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl03_hdn_calTyp"
+                                                        value="40">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl03$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl03_hdn_ctcbased"
+                                                        value="True">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl03$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl03_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl04_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl04$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl04$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl04_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl04$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl04_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl04$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl04_hdnpyId"
+                                                        value="1465324">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl04$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl04_abbr" value="CONV">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl04_lblpy"
+                                                        form="aspnetForm">Conveyance Allowance</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl04_lblFrml"
+                                                        form="aspnetForm">1600</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl04$txtamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl04_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl04_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl04_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl04$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl04_hdn_calTyp"
+                                                        value="39">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl04$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl04_hdn_ctcbased"
+                                                        value="True">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl04$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl04_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl05_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl05$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl05$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl05_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl05$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl05_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl05$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl05_hdnpyId"
+                                                        value="1465325">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl05$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl05_abbr"
+                                                        value="MEDICAL">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl05_lblpy"
+                                                        form="aspnetForm">Medical Allowance</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl05_lblFrml"
+                                                        form="aspnetForm">1250</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl05$txtamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl05_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl05_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl05_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl05$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl05_hdn_calTyp"
+                                                        value="39">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl05$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl05_hdn_ctcbased"
+                                                        value="True">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl05$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl05_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl06_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl06$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl06$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl06_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl06$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl06_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl06$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl06_hdnpyId"
+                                                        value="1465326">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl06$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl06_abbr"
+                                                        value="SPLALL">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl06_lblpy"
+                                                        form="aspnetForm">Special Allowance</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl06_lblFrml"
+                                                        form="aspnetForm">0</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl06$txtamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl06_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl06_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl06_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl06$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl06_hdn_calTyp"
+                                                        value="39">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl06$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl06_hdn_ctcbased"
+                                                        value="True">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl06$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl06_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl07_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl07$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl07$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl07_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl07$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl07_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl07$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl07_hdnpyId"
+                                                        value="1465327">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl07$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl07_abbr" value="PF">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl07_lblpy"
+                                                        form="aspnetForm">Provident Fund</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl07_lblFrml"
+                                                        form="aspnetForm">BASIC*12%</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl07$txtamt"
+                                                        type="text" maxlength="15" readonly="readonly"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl07_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl07_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl07_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl07$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl07_hdn_calTyp"
+                                                        value="40">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl07$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl07_hdn_ctcbased"
+                                                        value="False">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl07$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl07_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl08_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl08$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl08$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl08_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl08$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl08_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl08$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl08_hdnpyId"
+                                                        value="1465328">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl08$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl08_abbr" value="PT">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl08_lblpy"
+                                                        form="aspnetForm">Profession Tax</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl08_lblFrml"
+                                                        form="aspnetForm">Earnings</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl08$txtamt"
+                                                        type="text" maxlength="15" readonly="readonly"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl08_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl08_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl08_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl08$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl08_hdn_calTyp"
+                                                        value="41">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl08$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl08_hdn_ctcbased"
+                                                        value="False">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl08$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl08_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl09_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl09$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl09$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl09_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl09$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl09_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl09$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl09_hdnpyId"
+                                                        value="1465329">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl09$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl09_abbr" value="ESI">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl09_lblpy"
+                                                        form="aspnetForm">Employee State Insurance</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl09_lblFrml"
+                                                        form="aspnetForm">Earnings</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl09$txtamt"
+                                                        type="text" maxlength="15" readonly="readonly"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl09_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl09_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl09_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl09$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl09_hdn_calTyp"
+                                                        value="40">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl09$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl09_hdn_ctcbased"
+                                                        value="False">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl09$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl09_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl10_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl10$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl10$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl10_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl10$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl10_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl10$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl10_hdnpyId"
+                                                        value="1465331">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl10$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl10_abbr"
+                                                        value="PFEMPYER">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl10_lblpy"
+                                                        form="aspnetForm">PF Employer</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl10_lblFrml"
+                                                        form="aspnetForm">BASIC*12%</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl10$txtamt"
+                                                        type="text" maxlength="15" readonly="readonly"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl10_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl10_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl10_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl10$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl10_hdn_calTyp"
+                                                        value="40">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl10$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl10_hdn_ctcbased"
+                                                        value="True">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl10$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl10_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl11_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl11$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl11$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl11_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl11$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl11_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl11$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl11_hdnpyId"
+                                                        value="1465332">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl11$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl11_abbr"
+                                                        value="ESIEMPYER">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl11_lblpy"
+                                                        form="aspnetForm">ESI Employer</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl11_lblFrml"
+                                                        form="aspnetForm">Earnings</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl11$txtamt"
+                                                        type="text" maxlength="15" readonly="readonly"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl11_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl11_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl11_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl11$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl11_hdn_calTyp"
+                                                        value="40">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl11$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl11_hdn_ctcbased"
+                                                        value="True">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl11$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl11_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl12_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl12$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl12$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl12_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl12$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl12_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl12$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl12_hdnpyId"
+                                                        value="1465335">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl12$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl12_abbr" value="LC">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl12_lblpy"
+                                                        form="aspnetForm">Local Conveyance</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl12_lblFrml"
+                                                        form="aspnetForm">0</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl12$txtamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl12_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl12_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl12_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl12$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl12_hdn_calTyp"
+                                                        value="39">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl12$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl12_hdn_ctcbased"
+                                                        value="False">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl12$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl12_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl13_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl13$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl13$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl13_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl13$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl13_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl13$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl13_hdnpyId"
+                                                        value="1465336">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl13$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl13_abbr" value="SW">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl13_lblpy"
+                                                        form="aspnetForm">Staff Welfare</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl13_lblFrml"
+                                                        form="aspnetForm">0</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl13$txtamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl13_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl13_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl13_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl13$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl13_hdn_calTyp"
+                                                        value="39">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl13$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl13_hdn_ctcbased"
+                                                        value="False">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl13$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl13_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:10%;">
+                                                    <input id="ctl00_body_EmployeeWizard_gvSalary_ctl14_chkSal"
+                                                        type="checkbox"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl14$chkSal"
+                                                        checked="checked">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl14$hdn_ePayId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl14_hdn_ePayId">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl14$hdnChecked"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl14_hdnChecked"
+                                                        value="1">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl14$hdnpyId"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl14_hdnpyId"
+                                                        value="1465337">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl14$abbr"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl14_abbr" value="TE">
+                                                </td>
+                                                <td align="left" style="width:30%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl14_lblpy"
+                                                        form="aspnetForm">Travel Expenses</span>
+                                                </td>
+                                                <td align="left" style="width:20%;">
+                                                    <span id="ctl00_body_EmployeeWizard_gvSalary_ctl14_lblFrml"
+                                                        form="aspnetForm">0</span>
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl14$txtamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl14_txtamt"
+                                                        class="form-control text_align_right"
+                                                        onkeyup="CalculateAmount('ctl00_body_EmployeeWizard_gvSalary_ctl14_txtamt','ctl00_body_EmployeeWizard_gvSalary_ctl14_txtAnnualamt')"
+                                                        style="width:120px;">
+
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl14$hdn_calTyp"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl14_hdn_calTyp"
+                                                        value="39">
+                                                    <input type="hidden"
+                                                        name="ctl00$body$EmployeeWizard$gvSalary$ctl14$hdn_ctcbased"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl14_hdn_ctcbased"
+                                                        value="False">
+                                                </td>
+                                                <td align="right" style="width:20%;">
+                                                    <input name="ctl00$body$EmployeeWizard$gvSalary$ctl14$txtAnnualamt"
+                                                        type="text" maxlength="15"
+                                                        id="ctl00_body_EmployeeWizard_gvSalary_ctl14_txtAnnualamt"
+                                                        disabled="disabled" class="form-control text_align_right"
+                                                        style="width:120px;">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="col-md-12">
+
+                            <span id="ctl00_body_EmployeeWizard_Label13">Difference Amount</span>
+                            <input name="ctl00$body$EmployeeWizard$txtDiffAmt" type="text"
+                                id="ctl00_body_EmployeeWizard_txtDiffAmt">
+
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- salary info End-->
+    </div>

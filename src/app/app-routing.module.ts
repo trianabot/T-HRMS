@@ -9,6 +9,8 @@ import { ClientComponent } from './client/client.component';
 import { DeptComponent } from './dept/dept.component';
 import { ProjectComponent } from './project/project.component';
 import { EmpComponent } from './emp/emp.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'registration',component:RegistrtaionComponent},
@@ -19,7 +21,8 @@ const routes: Routes = [
   {path:'client',component:ClientComponent},
   {path:'dept',component:DeptComponent},
   {path:'project',component:ProjectComponent},
-  {path:'emp',component:EmpComponent}
+  {path:'emp',component:EmpComponent},
+  {path:'addemployee', component:AddEmployeeComponent}
 ];
 
 @NgModule({

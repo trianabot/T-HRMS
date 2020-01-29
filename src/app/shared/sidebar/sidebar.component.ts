@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, DebugElement } from '@angular/core';
 import { AuthService } from 'src/app/services/auth_service/auth.service';
+import { NaveEvetsService } from 'src/app/services/nave-evets.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +9,9 @@ import { AuthService } from 'src/app/services/auth_service/auth.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private authservice:AuthService) { }
+  emitPass: EventEmitter<number> = new EventEmitter<number>();
+
+  constructor(private authservice:AuthService, private naveCloseActionService:NaveEvetsService) { }
 baseUIdata = false;
  data = false;
  component = false;
@@ -19,8 +22,19 @@ baseUIdata = false;
  Otherdata = false;
  isActive:boolean;
  loggedInUser:any;
+ success = false;
+ public naveCloseData:boolean = false;
   ngOnInit() {
-   
+   this.naveCloseActionService.actionSourceObjservable.subscribe((action)=>{
+    this.naveCloseData = action;
+    if(action){
+      document.getElementById("change1").style.width = "4rem";
+      document.getElementById("u-nav").style.paddingLeft = "3rem"; 
+    }else{
+      document.getElementById("change1").style.width = "15rem";
+      document.getElementById("u-nav").style.paddingLeft = "14rem" 
+    }
+   });
   }
 
  
@@ -60,6 +74,15 @@ else{
   //   }
   //   else{
   //     this.Otherdata = false;
+  //   }
+  // }
+  // header(){
+    
+  //   if(this.naveCloseData){
+  //     document.getElementById("change").style.width = "4.5rem";
+  //   }
+  //   else{
+  //     document.getElementById("change").style.width = "15rem";
   //   }
   // }
 

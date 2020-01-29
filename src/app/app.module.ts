@@ -19,6 +19,7 @@ import { ClientComponent } from './client/client.component';
 import { DeptComponent } from './dept/dept.component';
 import { ProjectComponent } from './project/project.component';
 import { EmpComponent } from './emp/emp.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EmpComponent } from './emp/emp.component';
     ClientComponent,
     DeptComponent,
     ProjectComponent,
-    EmpComponent
+    EmpComponent,
+    AddEmployeeComponent
   ],
   imports: [
     BrowserModule,
