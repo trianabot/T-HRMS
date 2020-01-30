@@ -1,24 +1,57 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormGroup,Validators,FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
   styleUrls: ['./add-employee.component.css']
 })
 export class AddEmployeeComponent implements OnInit {
-  OFFICIAL: boolean;
-  PF: boolean;
-  SALARY: boolean;
-  PERSONAL: boolean;
-  OTHERS:boolean;
-  constructor() { }
+  onBordingForm:FormGroup;
+  OFFICIAL: boolean=false;
+  PF: boolean=false;
+  SALARY: boolean=false;
+  PERSONAL: boolean=false;
+  OTHERS:boolean=false;
+  constructor(private fb:FormBuilder) {
+    this.onBordingForm=this.fb.group({
+      companyId:['',Validators.required],
+      empName:['',Validators.required],
+      dateofbirth:['',Validators.required],
+      address1:['',Validators.required],
+      address2:['',Validators.required],
+      city:['',Validators.required],
+      emailId:['',Validators.required],
+      phone:['',Validators.required],
+      mobile:['',Validators.required],
+      emergency:['',Validators.required],
+      panNumber:['',Validators.required],
+      aadhaarNo:['',Validators.required],
+      joinDate:['',Validators.required],
+      bankAccount:['',],
+      ess:[''],
+      confirmation:['',],
+      pfUan:['',],
+      pfNumber:['',],
+      pfEnroleDate:['',],
+      epfNumber:['',],
+      esiNumber:['',],
+      ctc:['',],
+      fbp:['',],
+      variablePay:['',],
+      total:['',],
+      differenceAmount:[''],
+      productType:['']
+     
+    })
+   }
 
   ngOnInit() {
+    this.PERSONAL=true;
     this.OTHERS=false;
     this.OFFICIAL=false;
     this.PF=false;
     this.SALARY=false;
-    this.PERSONAL=true;
+   
   }
 
   official() {
@@ -55,6 +88,9 @@ export class AddEmployeeComponent implements OnInit {
     this.PF=false;
     this.SALARY=false;
     this.PERSONAL=false;
+  }
+  onSubmit(){
+    console.log("onbording form value",this.onBordingForm.value);
   }
  
 }

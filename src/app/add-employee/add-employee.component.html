@@ -19,9 +19,6 @@
                         <br>
                         <br>
                         <div id="ctl00_body_Panel1">
-
-                          
-
                             <table cellspacing="0" cellpadding="0" id="ctl00_body_EmployeeWizard"
                                 style="width:100%;border-collapse:collapse;">
                                 <tbody>
@@ -33,12 +30,20 @@
                                                 <tbody>
                                                     <tr>
                                                         <td >
-                                                            <div value="personal"  (click)="personal()">
+
+                                                            <!-- <div value="personal"  (click)="personal()"> -->
+
+                                                            <div value="personal" (click)="personal()">
+
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_divStep"
                                                                     class="ActiveStepNumber">
                                                                     <span
                                                                         id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_lblStep1" 
+
                                                                         style="cursor: pointer;">1</span>
+
+                                                                         <!-- style="cursor: pointer;">1</span> -->
+
                                                                 </div>
                                                                 <br>
                                                                 <a id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_SideBarButton"
@@ -173,6 +178,7 @@
         
 
         <!--Personal data-->
+        <form [formGroup]="onBordingForm" (ngSubmit)="onSubmit()" >
         <div *ngIf="PERSONAL">
             <div class="row">
                 <div class="col-md-4">
@@ -180,7 +186,7 @@
                         <div class="form-group">
                             <span id="ctl00_body_EmployeeWizard_lblCode" style="color:Black;">Code</span><span
                                 class="required"> *</span>
-                            <input name="ctl00$body$EmployeeWizard$txtCode" type="text" formControlName = "companyId" maxlength="20"
+                                <input name="ctl00$body$EmployeeWizard$txtCode" type="text"  formControlName="companyId" maxlength="20"
                                 id="ctl00_body_EmployeeWizard_txtCode" class="form-control" style="color:Black;">
 
                         </div>
@@ -338,6 +344,8 @@
                                     Half-Yearly</option>
 
                             </select>
+                         
+                              
                         </div>
                         <div class="form-group">
                             <label>Tax status</label>
@@ -795,7 +803,7 @@
                                 <label>&nbsp; </label>
                             </div>
 
-                            <input type="button" name="ctl00$body$EmployeeWizard$btnCalculate" value="Calculate" formControlName = ""
+                            <input type="button" name="ctl00$body$EmployeeWizard$btnCalculate" value="Calculate" formControlName = "total"
                                 id="ctl00_body_EmployeeWizard_btnCalculate" class="btn btn-default">
 
 
@@ -1576,10 +1584,14 @@
                     </div>
                 </div>
             </div>
+                <button type="submit" [disabled]="!onBordingForm.valid">Submit</button>
         </div>
 
         <div *ngIf="OTHERS" >
             other information
         </div>
+       
+        </form >
+      
         <!-- salary info End-->
     </div>
