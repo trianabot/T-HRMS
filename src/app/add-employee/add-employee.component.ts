@@ -76,11 +76,6 @@ export class AddEmployeeComponent implements OnInit {
     this.SALARY=false;
     this.PERSONAL=false;
     this.OTHERS=false;
-
-    this.status1 = ! this.status1;
-    this.status = false;
-    this.status2 = false;
-    this.status3 = false;
   }
   personal(){
     this.OFFICIAL=false;
