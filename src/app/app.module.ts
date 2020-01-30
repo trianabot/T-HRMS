@@ -20,6 +20,8 @@ import { DeptComponent } from './dept/dept.component';
 import { ProjectComponent } from './project/project.component';
 import { EmpComponent } from './emp/emp.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { NbThemeModule } from '@nebular/theme';
+import {MatTabsModule} from '@angular/material'
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NbThemeModule,
+    MatTabsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

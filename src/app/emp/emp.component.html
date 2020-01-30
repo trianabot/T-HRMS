@@ -3,7 +3,7 @@
 <div class="" style="margin-top: 0px;">
     <!-- start: TEXT FIELDS PANEL -->
     <div class="tabbable EmployeesMargin">
-        <ul id="EmpCenterTab" class="nav nav-tabs tab-bricky">
+        <!-- <ul id="EmpCenterTab" class="nav nav-tabs tab-bricky">
             <li class="active">
                 <a data-toggle="tab" class="Employee">Employee Master
                 </a>
@@ -24,7 +24,7 @@
                 <a data-toggle="tab" class="More">More
                 </a>
             </li>
-        </ul>
+        </ul> -->
         <div class="tab-content">
             <div class="tab-pane in active" id="tab1">
 
@@ -64,56 +64,6 @@
                         </label>
                     </div>
                     <div class="col-md-3 pull-right">
-                        <div class="col-md pull-right">
-                            <div class="filtter">
-                                <div class="btn-group gearFilter">
-                                    <a id="EmployeeFilter" style="text-decoration: none"><i class="harmony_gear"></i>
-                                    </a>
-                                    <ul class="gear_dropdown" id="custom_dropdown" role="menu">
-                                        <div id="Div1">
-                                            <div id="ctl00_body_UpdatePanel6">
-
-                                                <div class="">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <input id="ctl00_body_chkIsActive" type="checkbox"
-                                                                name="ctl00$body$chkIsActive"
-                                                                onclick="javascript:setTimeout('__doPostBack(\'ctl00$body$chkIsActive\',\'\')', 0)"><label
-                                                                for="ctl00_body_chkIsActive">Include inactive</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        &nbsp;
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label for="basic">
-                                                                    Apply to all tables
-                                                                </label>
-                                                                <select name="ctl00$body$ddlFilter"
-                                                                    onchange="javascript:setTimeout('__doPostBack(\'ctl00$body$ddlFilter\',\'\')', 0)"
-                                                                    id="ctl00_body_ddlFilter"
-                                                                    class="form-control select-default"
-                                                                    form="aspnetForm">
-                                                                    <option selected="selected" value="10">10 items
-                                                                    </option>
-                                                                    <option value="20">20 items</option>
-                                                                    <option value="50">50 items</option>
-                                                                    <option value="100">100 items</option>
-
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                         <div class="dashDrop pull-right">
                             <a href="javascript: void(0);" id="ctl00_body_btnAddEmploye"
                                 class="btn btn-default pull-left" routerLink="/addemployee">Add employee</a>
@@ -135,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="ctl00_body_Employeetab1row2" class="row">
+                <!-- <div id="ctl00_body_Employeetab1row2" class="row">
                     <div class="panel-body">
                         <div class="table-responsive">
                             <div id="ctl00_body_ctl06">
@@ -158,8 +108,380 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <ul id="EmpCenterTab" class="nav nav-tabs tab-bricky">
+            <li class="active" value="itdepartment" (click) = "it()">
+                <a data-toggle="tab" class="Employee">IT Department
+                </a>
+            </li>
+            <li value="qcdepartment" (click) = "qc()" >
+                <a data-toggle="tab" class="Attendance">Accounting Department
+                </a>
+            </li>
+            <li value="hrdepatment" (click) = "hr()" >
+                <a data-toggle="tab" class="Adjustments">HR Department
+                </a>
+            </li>
+            <li value="trainy" (click) = "TRAINY()" >
+                <a data-toggle="tab" class="Control">Facility Department
+                </a>
+            </li>
+            <!-- <li value="itDepartment" (click) = "others()">
+                <a data-toggle="tab" class="More">More
+                </a>
+            </li> -->
+        </ul>
+    </div>
+</div>
+
+<div *ngIf = "itdepartment">
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+<div *ngIf = "qcdepartment">
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+<div *ngIf = "hrdepatment">
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div><div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+<div *ngIf = "trainy">
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; TDS 001</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; Razik</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; Manager</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a href="#" class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
         </div>
     </div>
 </div>

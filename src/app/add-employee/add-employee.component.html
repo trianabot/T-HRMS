@@ -33,12 +33,12 @@
                                                 <tbody>
                                                     <tr>
                                                         <td >
-                                                            <div value="personal" >
+                                                            <div value="personal"  (click)="personal()">
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_divStep"
                                                                     class="ActiveStepNumber">
                                                                     <span
                                                                         id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_lblStep1" 
-                                                                        (click)="personal()" style="cursor: pointer;">1</span>
+                                                                        style="cursor: pointer;">1</span>
                                                                 </div>
                                                                 <br>
                                                                 <a id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_SideBarButton"
@@ -180,13 +180,13 @@
                         <div class="form-group">
                             <span id="ctl00_body_EmployeeWizard_lblCode" style="color:Black;">Code</span><span
                                 class="required"> *</span>
-                            <input name="ctl00$body$EmployeeWizard$txtCode" type="text" maxlength="20"
+                            <input name="ctl00$body$EmployeeWizard$txtCode" type="text" formControlName = "companyId" maxlength="20"
                                 id="ctl00_body_EmployeeWizard_txtCode" class="form-control" style="color:Black;">
 
                         </div>
                         <div class="form-group">
                             <label>Employee name <span class="required">*</span></label>
-                            <input name="ctl00$body$EmployeeWizard$txtName" type="text"
+                            <input name="ctl00$body$EmployeeWizard$txtName" type="text" formControlName = "empName"
                                 id="ctl00_body_EmployeeWizard_txtName" maxlength="45" class="form-control">
                             <span id="ctl00_body_EmployeeWizard_RequiredFieldValidator1" class="error"
                                 style="color:Red;display:none;">Enter
@@ -196,7 +196,7 @@
                             <label>Date of birth<span class="required">*</span></label>
                             <div class="date_grop">
                                 <div class="date date-picker">
-                                    <input name="ctl00$body$EmployeeWizard$txtDob" type="text"
+                                    <input name="ctl00$body$EmployeeWizard$txtDob" type="text" formControlName = "dateofbirth"
                                         id="ctl00_body_EmployeeWizard_txtDob" class="date_field" style="width:92%;">
                                     <span class="add-on"><i class="cal_icon" id="cal"></i></span>
                                     <br>
@@ -215,7 +215,7 @@
                         </div>
                         <div class="form-group">
                             <label>Address</label><br>
-                            <input name="ctl00$body$EmployeeWizard$txtAddress" type="text"
+                            <input name="ctl00$body$EmployeeWizard$txtAddress" type="text" formControlName = "address1"
                                 id="ctl00_body_EmployeeWizard_txtAddress" maxlength="100" class="form-control">
                             &nbsp;
 
@@ -223,7 +223,7 @@
                                 style="color:Red;display:none;">Please
                                 enter maxium 100 characters for
                                 address</span>
-                            <input name="ctl00$body$EmployeeWizard$txtAddress2" type="text"
+                            <input name="ctl00$body$EmployeeWizard$txtAddress2" type="text" formControlName = "address2"
                                 id="ctl00_body_EmployeeWizard_txtAddress2" maxlength="100" class="form-control">
                             <span id="ctl00_body_EmployeeWizard_RegularExpressionValidator2" class="error"
                                 style="color:Red;display:none;">Please
@@ -232,7 +232,7 @@
                         </div>
                         <div class="form-group">
                             <label>City</label>
-                            <input name="ctl00$body$EmployeeWizard$txtCity" type="text"
+                            <input name="ctl00$body$EmployeeWizard$txtCity" type="text" formControlName = "city"
                                 id="ctl00_body_EmployeeWizard_txtCity" maxlength="50" class="form-control">
 
 
@@ -374,7 +374,7 @@
 
                         <div class="form-group">
                             <label>Email address </label>
-                            <input name="ctl00$body$EmployeeWizard$txtEmailid" type="text" maxlength="100"
+                            <input name="ctl00$body$EmployeeWizard$txtEmailid" type="text" formControlName = "emailId" maxlength="100"
                                 id="ctl00_body_EmployeeWizard_txtEmailid" class="form-control">
 
                             <span id="ctl00_body_EmployeeWizard_revtxtEmailid" class="error"
@@ -383,25 +383,25 @@
                         </div>
                         <div class="form-group">
                             <label>Phone</label>
-                            <input name="ctl00$body$EmployeeWizard$txtPhone" type="text" maxlength="15"
+                            <input name="ctl00$body$EmployeeWizard$txtPhone" type="text" formControlName = "phone" maxlength="15"
                                 id="ctl00_body_EmployeeWizard_txtPhone" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Mobile</label>
-                            <input name="ctl00$body$EmployeeWizard$txtMobileNo" type="text" maxlength="15"
+                            <input name="ctl00$body$EmployeeWizard$txtMobileNo" type="text" formControlName = "mobile" maxlength="15"
                                 id="ctl00_body_EmployeeWizard_txtMobileNo" class="form-control">
 
                         </div>
                         <div class="form-group">
                             <label>Emergency number </label>
-                            <input name="ctl00$body$EmployeeWizard$txtEmergencyNo" type="text" maxlength="15"
+                            <input name="ctl00$body$EmployeeWizard$txtEmergencyNo" type="text" formControlName = "emergency" maxlength="15"
                                 id="ctl00_body_EmployeeWizard_txtEmergencyNo" class="form-control">
 
 
                         </div>
                         <div class="form-group">
                             <label>PAN</label>
-                            <input name="ctl00$body$EmployeeWizard$txtPANNumber" type="text" maxlength="10"
+                            <input name="ctl00$body$EmployeeWizard$txtPANNumber" type="text" maxlength="10" formControlName = "panNumber"
                                 id="ctl00_body_EmployeeWizard_txtPANNumber" class="form-control"
                                 onkeyup="this.value=this.value.toUpperCase()">
 
@@ -411,7 +411,7 @@
                         </div>
                         <div class="form-group">
                             <label>Aadhaar No</label>
-                            <input name="ctl00$body$EmployeeWizard$txtAdhar" type="text" maxlength="12"
+                            <input name="ctl00$body$EmployeeWizard$txtAdhar" type="text" maxlength="12" formControlName = "aadhaarNo"
                                 id="ctl00_body_EmployeeWizard_txtAdhar" class="form-control">
 
                             <span id="ctl00_body_EmployeeWizard_CustomValidatorAdhar"
@@ -448,7 +448,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-12">
-                        <span id="ctl00_body_EmployeeWizard_lblStep2Title" class="StepTitle">Employee Name: vali</span>
+                        <span id="ctl00_body_EmployeeWizard_lblStep2Title" class="StepTitle">Employee Name:</span>
                     </div>
                 </div>
             </div>
@@ -460,7 +460,7 @@
                             <label>Joining date <span class="required">*</span></label>
                             <div class="date_grop">
                                 <div class="date date-picker">
-                                    <input name="ctl00$body$EmployeeWizard$txtDateofJoin"
+                                    <input name="ctl00$body$EmployeeWizard$txtDateofJoin" formControlName = "joinDate"
                                         id="ctl00_body_EmployeeWizard_txtDateofJoin" class="date_field" type="text"
                                         style="width: 92%;">
                                     <span class="add-on"><i class="cal_icon" id="I1"></i></span>
@@ -502,11 +502,11 @@
                         </div>
                         <div class="form-group">
                             <label>Bank a/c number </label>
-                            <input name="ctl00$body$EmployeeWizard$txtBankNumb" type="text" maxlength="50"
+                            <input name="ctl00$body$EmployeeWizard$txtBankNumb" type="text" maxlength="50" formControlName = "bankAccount"
                                 id="ctl00_body_EmployeeWizard_txtBankNumb" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input id="ctl00_body_EmployeeWizard_chkEnableESS" type="checkbox"
+                            <input id="ctl00_body_EmployeeWizard_chkEnableESS" type="checkbox" formControlName = "ess"
                                 name="ctl00$body$EmployeeWizard$chkEnableESS" checked="checked">
                             <label>Enable ESS</label>
                         </div>
@@ -518,7 +518,7 @@
                             <label>
                                 Confirmation period
                             </label>
-                            <input name="ctl00$body$EmployeeWizard$txtMonths" type="text" value="0" maxlength="2"
+                            <input name="ctl00$body$EmployeeWizard$txtMonths" type="text" value="0" maxlength="2" formControlName = "confirmation"
                                 id="ctl00_body_EmployeeWizard_txtMonths" class="form-control">
 
 
@@ -580,7 +580,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-12">
-                        <span id="ctl00_body_EmployeeWizard_lblStep3Title" class="StepTitle">Employee Name: vali</span>
+                        <span id="ctl00_body_EmployeeWizard_lblStep3Title" class="StepTitle">Employee Name:</span>
                     </div>
                 </div>
             </div>
@@ -608,7 +608,7 @@
                                 <div class="col-md-12">
                                     <br>
                                     <label>PF - UAN</label>
-                                    <input name="ctl00$body$EmployeeWizard$txtPFUAN" type="text" maxlength="12"
+                                    <input name="ctl00$body$EmployeeWizard$txtPFUAN" type="text" maxlength="12" formControlName = "pfUan"
                                         id="ctl00_body_EmployeeWizard_txtPFUAN" class="form-control emp_pf">
 
                                     <span id="ctl00_body_EmployeeWizard_rexNumber" class="error"
@@ -620,7 +620,7 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <label>PF Number</label>
-                                    <input name="ctl00$body$EmployeeWizard$txtPFNumber" type="text" maxlength="50"
+                                    <input name="ctl00$body$EmployeeWizard$txtPFNumber" type="text" maxlength="50" formControlName = "pfNumber"
                                         id="ctl00_body_EmployeeWizard_txtPFNumber" class="form-control emp_pf">
                                 </div>
                             </div>
@@ -630,7 +630,7 @@
                                     <label>PF Enrollment Date</label>
                                     <div class="date_grop">
                                         <div class="date date-picker">
-                                            <input name="ctl00$body$EmployeeWizard$txtPFJoinDate" type="text"
+                                            <input name="ctl00$body$EmployeeWizard$txtPFJoinDate" type="text" formControlName = "pfEnroleDate"
                                                 id="ctl00_body_EmployeeWizard_txtPFJoinDate" class="TextBox"
                                                 style="width: 92%;">
                                             <span class="add-on"><i class="cal_icon" id="I3"></i></span>
@@ -645,7 +645,7 @@
                                 <div class="col-md-12">
                                     <br>
                                     <label>EPF Number</label>
-                                    <input name="ctl00$body$EmployeeWizard$txtEPFNumber" type="text" maxlength="20"
+                                    <input name="ctl00$body$EmployeeWizard$txtEPFNumber" type="text" maxlength="20" formControlName = "epfNumber"
                                         id="ctl00_body_EmployeeWizard_txtEPFNumber" class="form-control emp_pf">
                                 </div>
                             </div>
@@ -707,7 +707,7 @@
                         <div class="form-group">
                             <div id="ctl00_body_EmployeeWizard_ESI" class="col-md-12" hidden="">
                                 <label>ESI Number</label>
-                                <input name="ctl00$body$EmployeeWizard$txtESINumber" type="text" maxlength="15"
+                                <input name="ctl00$body$EmployeeWizard$txtESINumber" type="text" maxlength="15" formControlName = "esiNumber"
                                     id="ctl00_body_EmployeeWizard_txtESINumber" class="form-control">
                             </div>
                         </div>
@@ -741,7 +741,7 @@
                         <div class="form-group">
                             <label><span class="required">*</span> CTC (annual)</label>
 
-                            <input name="ctl00$body$EmployeeWizard$txtCTC" type="text"
+                            <input name="ctl00$body$EmployeeWizard$txtCTC" type="text" formControlName = "ctc"
                                 id="ctl00_body_EmployeeWizard_txtCTC" class="form-control">
 
 
@@ -759,7 +759,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>FBP</label>
-                            <input name="ctl00$body$EmployeeWizard$txtFbp" type="text"
+                            <input name="ctl00$body$EmployeeWizard$txtFbp" type="text" formControlName = "fbp"
                                 id="ctl00_body_EmployeeWizard_txtFbp" class="form-control">
 
                         </div>
@@ -775,7 +775,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Variable Pay</label>
-                            <input name="ctl00$body$EmployeeWizard$txtVariablePay" type="text"
+                            <input name="ctl00$body$EmployeeWizard$txtVariablePay" type="text" formControlName = "variablePay"
                                 id="ctl00_body_EmployeeWizard_txtVariablePay" class="form-control">
 
 
@@ -795,7 +795,7 @@
                                 <label>&nbsp; </label>
                             </div>
 
-                            <input type="button" name="ctl00$body$EmployeeWizard$btnCalculate" value="Calculate"
+                            <input type="button" name="ctl00$body$EmployeeWizard$btnCalculate" value="Calculate" formControlName = ""
                                 id="ctl00_body_EmployeeWizard_btnCalculate" class="btn btn-default">
 
 
@@ -1567,7 +1567,7 @@
                         <div class="col-md-12">
 
                             <span id="ctl00_body_EmployeeWizard_Label13">Difference Amount</span>
-                            <input name="ctl00$body$EmployeeWizard$txtDiffAmt" type="text"
+                            <input name="ctl00$body$EmployeeWizard$txtDiffAmt" type="text" formControlName = "differenceAmount"
                                 id="ctl00_body_EmployeeWizard_txtDiffAmt">
 
                             <br>
