@@ -426,18 +426,18 @@
                         <br>
                         <br>
                         <div class="form-group">
-                            <div class="photo_holder">
+                            <!-- <div class="photo_holder">
                                 <img id="ctl00_body_EmployeeWizard_imgClient" src=""
                                     style="height:120px;width:120px;border-width:0px;">
-                            </div>
+                            </div> -->
                             <br>
                             <br>
                             <br>
                             <br>
                             <br>
                             <br>
-                            <input name="ctl00$body$EmployeeWizard$EmpLogo" type="file"
-                                id="ctl00_body_EmployeeWizard_EmpLogo" onchange="previewFile()">
+                            <!-- <input name="ctl00$body$EmployeeWizard$EmpLogo" type="file"
+                                id="ctl00_body_EmployeeWizard_EmpLogo" onchange="previewFile()"> -->
                         </div>
                     </div>
                 </div>
@@ -491,12 +491,12 @@
                         </div>
                         <div class="form-group">
                             <label>Payment mode</label>
-                            <select name="ctl00$body$EmployeeWizard$ddlpaymentmode" formControlName = "paymentMode"
+                            <select name="ctl00$body$EmployeeWizard$ddlpaymentmode"   class="selectpicker"  formControlName = "paymentMode"
                                 id="ctl00_body_EmployeeWizard_ddlpaymentmode" class="form-control search-default">
                                 <option selected="selected" value="-- Select --">-- Select --</option>
-                                <option value="68">Bank Transfer</option>
-                                <option value="69">Cheque</option>
-                                <option value="70">Cash</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                                <option value="Cheque">Cheque</option>
+                                <option value="Cash">Cash</option>
 
                             </select>
 
@@ -1575,6 +1575,7 @@
             </div>
             <div style="text-align: right;">
                 <button type="submit" class="btn btn-blue full right " [disabled]="!onBordingForm.valid">Submit</button>
+                <button type="submit" class=" btn-default full left " (click)="cancelService()">CANCEL</button>
             </div>
         </div>
 

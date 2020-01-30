@@ -29,4 +29,7 @@ export class AuthService {
   logout(data){
     return this.http.post('http://localhost:2020/user/logout',data);
   }
+  onbording(data){
+    return this.http.post('http://localhost:2020/user/onbording',data);
+  }
 }

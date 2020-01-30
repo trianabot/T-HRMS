@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,Validators,FormBuilder } from '@angular/forms';
+import { AuthService } from '../services/auth_service/auth.service';
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
@@ -16,7 +17,8 @@ export class AddEmployeeComponent implements OnInit {
   status1 : boolean = false;
   status2 : boolean = false;
   status3 : boolean = false;
-  constructor(private fb:FormBuilder) {
+
+  constructor(private fb:FormBuilder,private authservice:AuthService) {
     this.onBordingForm=this.fb.group({
       companyId:['',Validators.required],
       empName:['',Validators.required],
@@ -41,9 +43,9 @@ export class AddEmployeeComponent implements OnInit {
       esiNumber:['',],
       ctc:['',],
       fbp:['',],
-      Pay :[''],
+      variablePay:['',],
       total:['',],
-      differenceAmount:['',],
+      differenceAmount:[''],
       productType:['',],
       taxStatus : ['',],
       state : ['',],
@@ -54,6 +56,8 @@ export class AddEmployeeComponent implements OnInit {
       department : ['',],
       Designation : ['',],
       Relationship : ['',],
+
+      
      
     })
    }
@@ -66,8 +70,7 @@ export class AddEmployeeComponent implements OnInit {
     this.SALARY=false;
 
     this.status = ! this.status;
-  
-   
+
   }
 
   official() {
@@ -76,6 +79,11 @@ export class AddEmployeeComponent implements OnInit {
     this.SALARY=false;
     this.PERSONAL=false;
     this.OTHERS=false;
+
+    this.status = false;
+    this.status1 = ! this.status1;
+    this.status2 = false;
+    this.status3 = false;
   }
   personal(){
     this.OFFICIAL=false;
@@ -84,10 +92,12 @@ export class AddEmployeeComponent implements OnInit {
     this.PERSONAL= true;
     this.OTHERS=false;
 
+    
     this.status1 = false;
     this.status = ! this.status;
     this.status2 = false;
     this.status3 = false;
+
   }
   salary(){
     this.OFFICIAL=false;
@@ -96,10 +106,12 @@ export class AddEmployeeComponent implements OnInit {
     this.PERSONAL=false;
     this.OTHERS=false;
 
+    
     this.status1 = false;
-    this.status = false;
-    this.status2 = false;
     this.status3 = ! this.status3;
+    this.status2 = false;
+    this.status = false;
+
   }
   pf(){
     this.OFFICIAL=false;
@@ -108,6 +120,7 @@ export class AddEmployeeComponent implements OnInit {
     this.PERSONAL=false;
     this.OTHERS=false;
 
+    
     this.status2 = ! this.status2;
     this.status = false;
     this.status1 = false;
@@ -122,6 +135,15 @@ export class AddEmployeeComponent implements OnInit {
   // }
   onSubmit(){
     console.log("onbording form value",this.onBordingForm.value);
+    this.authservice.onbording(this.onBordingForm.value).subscribe(data=>{
+      console.log("data from onbording service",data['data']);
+      this.onBordingForm.reset();
+    },err=>{
+      console.log("err from onbording service",err);
+    })
+  }
+  cancelService(){
+   this.onBordingForm.reset();
   }
  
 }
