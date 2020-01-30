@@ -142,7 +142,30 @@
 
 <div *ngIf = "itdepartment">
     <div class="row" style="margin-top: 20px;">
-        <div class="col-md-3">
+     
+        <div class="col-md-3" *ngFor="let obj of empsData">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="row">
+                    <span class="col-md-5">Emp Id </span>
+                    <span class="col-md-7">: &nbsp; {{obj.companyId}}</span>
+                  </div>
+                  <div class="row">
+                      <span class="col-md-5">Name</span>
+                      <span class="col-md-7">: &nbsp; {{obj.empName}}</span>
+                  </div>
+                  <div class="row">
+                    <span class="col-md-5">Designation</span>
+                    <span class="col-md-7">: &nbsp; {{obj.Designation}}</span>
+                </div>
+                 <div style="text-align: center;">
+                    <a  class="btn btn-primary">View</a>
+                 </div>
+                </div>
+              </div>
+        </div>
+        <!-- <div class="col-md-3">
             <div class="card">
                 <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
                 <div class="card-body">
@@ -203,50 +226,6 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a class="btn btn-primary">View</a>
-                 </div>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <div class="row">
-                    <span class="col-md-5">Emp Id </span>
-                    <span class="col-md-7">: &nbsp; TDS 001</span>
-                  </div>
-                  <div class="row">
-                      <span class="col-md-5">Name</span>
-                      <span class="col-md-7">: &nbsp; Razik</span>
-                  </div>
-                  <div class="row">
-                    <span class="col-md-5">Designation</span>
-                    <span class="col-md-7">: &nbsp; Manager</span>
-                </div>
-                 <div style="text-align: center;">
-                    <a  class="btn btn-primary">View</a>
-                 </div>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <div class="row">
-                    <span class="col-md-5">Emp Id </span>
-                    <span class="col-md-7">: &nbsp; TDS 001</span>
-                  </div>
-                  <div class="row">
-                      <span class="col-md-5">Name</span>
-                      <span class="col-md-7">: &nbsp; Razik</span>
-                  </div>
-                  <div class="row">
-                    <span class="col-md-5">Designation</span>
-                    <span class="col-md-7">: &nbsp; Manager</span>
-                </div>
-                 <div style="text-align: center;">
                     <a  class="btn btn-primary">View</a>
                  </div>
                 </div>
@@ -273,7 +252,7 @@
                  </div>
                 </div>
               </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <div *ngIf = "qcdepartment">

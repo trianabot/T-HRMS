@@ -32,4 +32,7 @@ export class AuthService {
   onbording(data){
     return this.http.post('http://localhost:2020/user/onbording',data);
   }
+  getemployees(){
+    return this.http.get('http://localhost:2020/user/getemployees');
+  }
 }

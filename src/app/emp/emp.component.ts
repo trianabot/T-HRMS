@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class EmpComponent implements OnInit {
   onBoardForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private authserviced:AuthService) { }
   itdepartment: boolean;
   qcdepartment: boolean;
   hrdepatment: boolean;
@@ -18,6 +18,7 @@ export class EmpComponent implements OnInit {
   status1: boolean = false;
   status2: boolean = false;
   status3: boolean = false;
+  empsData:any=[];
   
   ngOnInit() {
     this.itdepartment = true;
@@ -25,6 +26,7 @@ export class EmpComponent implements OnInit {
     this.qcdepartment = false;
     this.trainy = false;
     this.status = !this.status;
+    this.getEmployees();
   }
 
   it() {
@@ -82,6 +84,14 @@ export class EmpComponent implements OnInit {
 //   this.className += " active";
 //   });
 // }
+  }
+  getEmployees(){
+this.authserviced.getemployees().subscribe(data=>{
+this.empsData=data['data'];
+console.log("this.empsDatathis.empsData",this.empsData);
+},err=>{
+  console.log("error while getting emps info",err);
+})
   }
   
 }
