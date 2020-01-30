@@ -6,40 +6,55 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-employee.component.css']
 })
 export class AddEmployeeComponent implements OnInit {
-  OFFICIAL : any;
-  pf : any;
-  salary : any;
-  personal : any;
+  OFFICIAL: boolean;
+  PF: boolean;
+  SALARY: boolean;
+  PERSONAL: boolean;
+  OTHERS:boolean;
   constructor() { }
 
   ngOnInit() {
+    this.OTHERS=false;
+    this.OFFICIAL=false;
+    this.PF=false;
+    this.SALARY=false;
+    this.PERSONAL=true;
   }
 
-  personalinfo(value){
-    if(value == "OFFICIAL"){
-      this.OFFICIAL = true;
-      this.personal = false;
-      this.salary = false;
-      this.pf = false;
-    }
-    else if(value == 'personal' ){
-this.personal = true;
-this.salary = false;
-      this.pf = false;
-      this.OFFICIAL = false;
-    }
-    else if (value == 'salary'){
-      this.salary = true;
-      this.OFFICIAL = false;
-      this.personal = false;
-      this.pf = false;
-    }
-    else if('pf'){
-      this.pf = true;
-      this.OFFICIAL = false;
-      this.personal = false;
-      this.salary = false;
-    }
-    
+  official() {
+    this.OFFICIAL=true;
+    this.PF=false;
+    this.SALARY=false;
+    this.PERSONAL=false;
+    this.OTHERS=false;
   }
+  personal(){
+    this.OFFICIAL=false;
+    this.PF=false;
+    this.SALARY=false;
+    this.PERSONAL= true;
+    this.OTHERS=false;
+  }
+  salary(){
+    this.OFFICIAL=false;
+    this.PF=false;
+    this.SALARY=true;
+    this.PERSONAL=false;
+    this.OTHERS=false;
+  }
+  pf(){
+    this.OFFICIAL=false;
+    this.PF=true;
+    this.SALARY=false;
+    this.PERSONAL=false;
+    this.OTHERS=false;
+    }
+  others(){
+    this.OTHERS=true;
+    this.OFFICIAL=false;
+    this.PF=false;
+    this.SALARY=false;
+    this.PERSONAL=false;
+  }
+ 
 }

@@ -20,6 +20,8 @@
                         <br>
                         <div id="ctl00_body_Panel1">
 
+                          
+
                             <table cellspacing="0" cellpadding="0" id="ctl00_body_EmployeeWizard"
                                 style="width:100%;border-collapse:collapse;">
                                 <tbody>
@@ -30,13 +32,13 @@
                                                 style="width:100%;border-collapse:collapse;">
                                                 <tbody>
                                                     <tr>
-                                                        <td>
-                                                            <div value="personal" [(ngModel)]="personal"
-                                                                (click)="personalinfo('personal')">
+                                                        <td >
+                                                            <div value="personal" >
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_divStep"
                                                                     class="ActiveStepNumber">
                                                                     <span
-                                                                        id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_lblStep1">1</span>
+                                                                        id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_lblStep1" 
+                                                                        (click)="personal()" style="cursor: pointer;">1</span>
                                                                 </div>
                                                                 <br>
                                                                 <a id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_SideBarButton"
@@ -46,8 +48,8 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <div value="OFFICIAL" [(ngModel)]="OFFICIAL"
-                                                                (click)="personalinfo('OFFICIAL')">
+                                                            <div value="OFFICIAL" 
+                                                                (click)="official();">
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl01_divStep"
                                                                     class="InActiveStepNumber">
                                                                     <span
@@ -60,8 +62,8 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <div value="pf" [(ngModel)]="pf"
-                                                                (click)="personalinfo('pf')">
+                                                            <div value="pf" 
+                                                                (click)="pf()">
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl02_divStep"
                                                                     class="InActiveStepNumber">
                                                                     <span
@@ -85,8 +87,8 @@
                                                                 DETAILS</a>
                                                         </td> -->
                                                         <td>
-                                                            <div value="others" [(ngModel)]="others"
-                                                                (click)="personalinfo('others')">
+                                                            <div value="others" 
+                                                                (click)="others()">
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl04_divStep"
                                                                     class="InActiveStepNumber">
                                                                     <span
@@ -99,8 +101,8 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <div value="salary" [(ngModel)]="salary"
-                                                                (click)="personalinfo('salary')">
+                                                            <div value="salary" 
+                                                                (click)="salary()">
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl05_divStep"
                                                                     class="InActiveStepNumber">
                                                                     <span
@@ -168,8 +170,10 @@
         </div>
 
 
+        
+
         <!--Personal data-->
-        <div *ngIf="personal">
+        <div *ngIf="PERSONAL">
             <div class="row">
                 <div class="col-md-4">
                     <div class="col-md-12">
@@ -572,7 +576,7 @@
 
 
         <!--pf details-->
-        <div *ngIf="pf">
+        <div *ngIf="PF">
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-12">
@@ -722,7 +726,7 @@
         <!--Other info-->
         <!--salary info-->
 
-        <div *ngIf="salary">
+        <div *ngIf="SALARY">
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-12">
@@ -1572,6 +1576,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div *ngIf="OTHERS" >
+            other information
         </div>
         <!-- salary info End-->
     </div>
