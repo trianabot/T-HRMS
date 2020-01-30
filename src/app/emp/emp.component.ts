@@ -18,11 +18,13 @@ export class EmpComponent implements OnInit {
   status1: boolean = false;
   status2: boolean = false;
   status3: boolean = false;
+  
   ngOnInit() {
     this.itdepartment = true;
     this.hrdepatment = false;
     this.qcdepartment = false;
     this.trainy = false;
+    this.status = !this.status;
   }
 
   it() {
@@ -31,23 +33,55 @@ export class EmpComponent implements OnInit {
     this.qcdepartment = false;
     this.trainy = false;
 
+    this.status1 = false;  
+    this.status2 = false; 
+    this.status3 = false; 
+    this.status = ! this.status;      
+
+
   }
   qc() {
     this.itdepartment = false;
     this.hrdepatment = false;
     this.qcdepartment = true;
-    this.trainy = false;    
+    this.trainy = false; 
+
+    this.status2 = false; 
+    this.status1 = ! this.status1; 
+    this.status3 = false; 
+    this.status = false;    
   }
   hr() {
     this.itdepartment = false;
     this.hrdepatment = true;
     this.qcdepartment = false;
     this.trainy = false;
+
+    this.status3 = false; 
+    this.status2 = ! this.status2; 
+    this.status1 = false; 
+    this.status = false; 
   }
   TRAINY() {
     this.itdepartment = false;
     this.hrdepatment = false;
     this.qcdepartment = false;
     this.trainy = true;
+
+   this.status3 = !this.status3; 
+    this.status2 = false; 
+    this.status1 = false; 
+    this.status = false; 
+
+//     var header = document.getElementById("EmpCenterTab");
+// var btns = header.getElementsByClassName("btn1");
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function() {
+//   var current = document.getElementsByClassName("active");
+//   current[0].className = current[0].className.replace(" active", "");
+//   this.className += " active";
+//   });
+// }
   }
+  
 }

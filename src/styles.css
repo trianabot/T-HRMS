@@ -11880,6 +11880,14 @@ table {
   background: #6b15b6;
   color: white;
 }
+.success{
+  background-color: #f4f4f4;
+  color: black !important;
+}
+.danger{
+  background-color: #6b15b6;
+  color: white !important;
+}
   /*------------------------------------
     File for your custom SCSS style
   ------------------------------------*/

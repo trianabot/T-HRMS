@@ -12,6 +12,10 @@ export class AddEmployeeComponent implements OnInit {
   SALARY: boolean=false;
   PERSONAL: boolean=false;
   OTHERS:boolean=false;
+  status : boolean = false;
+  status1 : boolean = false;
+  status2 : boolean = false;
+  status3 : boolean = false;
   constructor(private fb:FormBuilder) {
     this.onBordingForm=this.fb.group({
       companyId:['',Validators.required],
@@ -37,10 +41,19 @@ export class AddEmployeeComponent implements OnInit {
       esiNumber:['',],
       ctc:['',],
       fbp:['',],
-      variablePay:['',],
+      Pay :[''],
       total:['',],
-      differenceAmount:[''],
-      productType:['']
+      differenceAmount:['',],
+      productType:['',],
+      taxStatus : ['',],
+      state : ['',],
+      gender : ['',],
+      jobType : ['',],
+      paymentMode : ['',],
+      location :['',],
+      department : ['',],
+      Designation : ['',],
+      Relationship : ['',],
      
     })
    }
@@ -51,6 +64,9 @@ export class AddEmployeeComponent implements OnInit {
     this.OFFICIAL=false;
     this.PF=false;
     this.SALARY=false;
+
+    this.status = ! this.status;
+  
    
   }
 
@@ -60,6 +76,11 @@ export class AddEmployeeComponent implements OnInit {
     this.SALARY=false;
     this.PERSONAL=false;
     this.OTHERS=false;
+
+    this.status1 = ! this.status1;
+    this.status = false;
+    this.status2 = false;
+    this.status3 = false;
   }
   personal(){
     this.OFFICIAL=false;
@@ -67,6 +88,11 @@ export class AddEmployeeComponent implements OnInit {
     this.SALARY=false;
     this.PERSONAL= true;
     this.OTHERS=false;
+
+    this.status1 = false;
+    this.status = ! this.status;
+    this.status2 = false;
+    this.status3 = false;
   }
   salary(){
     this.OFFICIAL=false;
@@ -74,6 +100,11 @@ export class AddEmployeeComponent implements OnInit {
     this.SALARY=true;
     this.PERSONAL=false;
     this.OTHERS=false;
+
+    this.status1 = false;
+    this.status = false;
+    this.status2 = false;
+    this.status3 = ! this.status3;
   }
   pf(){
     this.OFFICIAL=false;
@@ -81,14 +112,19 @@ export class AddEmployeeComponent implements OnInit {
     this.SALARY=false;
     this.PERSONAL=false;
     this.OTHERS=false;
+
+    this.status2 = ! this.status2;
+    this.status = false;
+    this.status1 = false;
+    this.status3 = false;
     }
-  others(){
-    this.OTHERS=true;
-    this.OFFICIAL=false;
-    this.PF=false;
-    this.SALARY=false;
-    this.PERSONAL=false;
-  }
+  // others(){
+  //   this.OTHERS=true;
+  //   this.OFFICIAL=false;
+  //   this.PF=false;
+  //   this.SALARY=false;
+  //   this.PERSONAL=false;
+  // }
   onSubmit(){
     console.log("onbording form value",this.onBordingForm.value);
   }

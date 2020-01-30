@@ -116,20 +116,20 @@
 <div class="row">
     <div class="col-md-12">
         <ul id="EmpCenterTab" class="nav nav-tabs tab-bricky">
-            <li class="active" value="itdepartment" (click) = "it()">
-                <a data-toggle="tab" class="Employee">IT Department
+            <li class="" value="itdepartment" (click) = "it()" >
+                <a data-toggle="tab" id="it" class="Employee " [ngClass]="status ? 'success' : 'danger'">IT Department
                 </a>
             </li>
             <li value="qcdepartment" (click) = "qc()" >
-                <a data-toggle="tab" class="Attendance">Accounting Department
+                <a data-toggle="tab" id="qc" class="Attendance " [ngClass]="status1 ? 'success' : 'danger'">Accounting Department
                 </a>
             </li>
             <li value="hrdepatment" (click) = "hr()" >
-                <a data-toggle="tab" class="Adjustments">HR Department
+                <a data-toggle="tab" id="hr" class="Adjustments " [ngClass]="status2 ? 'success' : 'danger'">HR Department
                 </a>
             </li>
             <li value="trainy" (click) = "TRAINY()" >
-                <a data-toggle="tab" class="Control">Facility Department
+                <a data-toggle="tab" id="TRAINY" class="Control " [ngClass]="status3 ? 'success' : 'danger'">Facility Department
                 </a>
             </li>
             <!-- <li value="itDepartment" (click) = "others()">
@@ -159,7 +159,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -181,7 +181,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a  class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -203,7 +203,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -225,7 +225,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a  class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -247,7 +247,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a  class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -269,7 +269,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -295,7 +295,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a  class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -317,7 +317,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a  class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -339,7 +339,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -361,7 +361,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a  class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -387,7 +387,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a  class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -408,7 +408,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -434,7 +434,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a  class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -456,7 +456,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>
@@ -478,7 +478,7 @@
                     <span class="col-md-7">: &nbsp; Manager</span>
                 </div>
                  <div style="text-align: center;">
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a  class="btn btn-primary">View</a>
                  </div>
                 </div>
               </div>

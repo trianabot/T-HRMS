@@ -19,6 +19,9 @@
                         <br>
                         <br>
                         <div id="ctl00_body_Panel1">
+
+                          
+
                             <table cellspacing="0" cellpadding="0" id="ctl00_body_EmployeeWizard"
                                 style="width:100%;border-collapse:collapse;">
                                 <tbody>
@@ -30,20 +33,12 @@
                                                 <tbody>
                                                     <tr>
                                                         <td >
-
-                                                            <!-- <div value="personal"  (click)="personal()"> -->
-
-                                                            <div value="personal" (click)="personal()">
-
+                                                            <div value="personal"  (click)="personal()">
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_divStep"
-                                                                    class="ActiveStepNumber">
+                                                                    class="" [ngClass]="status ? 'ActiveStepNumber' : 'InActiveStepNumber'">
                                                                     <span
                                                                         id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_lblStep1" 
-
                                                                         style="cursor: pointer;">1</span>
-
-                                                                         <!-- style="cursor: pointer;">1</span> -->
-
                                                                 </div>
                                                                 <br>
                                                                 <a id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_SideBarButton"
@@ -56,7 +51,7 @@
                                                             <div value="OFFICIAL" 
                                                                 (click)="official();">
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl01_divStep"
-                                                                    class="InActiveStepNumber">
+                                                                    class="" [ngClass]="status1 ? 'ActiveStepNumber' : 'InActiveStepNumber'">
                                                                     <span
                                                                         id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl01_lblStep">2</span>
                                                                 </div>
@@ -70,7 +65,7 @@
                                                             <div value="pf" 
                                                                 (click)="pf()">
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl02_divStep"
-                                                                    class="InActiveStepNumber">
+                                                                    class="" [ngClass]="status2 ? 'ActiveStepNumber' : 'InActiveStepNumber'">
                                                                     <span
                                                                         id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl02_lblStep">3</span>
                                                                 </div>
@@ -91,7 +86,7 @@
                                                                 disabled="disabled" class="WizardStepDesc">LEAVE
                                                                 DETAILS</a>
                                                         </td> -->
-                                                        <td>
+                                                        <!-- <td>
                                                             <div value="others" 
                                                                 (click)="others()">
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl04_divStep"
@@ -104,14 +99,14 @@
                                                                     disabled="disabled" class="WizardStepDesc">OTHER
                                                                     INFO</a>
                                                             </div>
-                                                        </td>
+                                                        </td> -->
                                                         <td>
                                                             <div value="salary" 
                                                                 (click)="salary()">
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl05_divStep"
-                                                                    class="InActiveStepNumber">
+                                                                    class="" [ngClass]="status3 ? 'ActiveStepNumber' : 'InActiveStepNumber'">
                                                                     <span
-                                                                        id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl05_lblStep">5</span>
+                                                                        id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl05_lblStep">4</span>
                                                                 </div>
                                                                 <br>
                                                                 <a id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl05_SideBarButton"
@@ -146,7 +141,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <!-- <tr>
                                                         <td>
                                                             <div
                                                                 id="ctl00_body_EmployeeWizard_StartNavigationTemplateContainerID_panelStart">
@@ -161,7 +156,7 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </td>
@@ -186,7 +181,7 @@
                         <div class="form-group">
                             <span id="ctl00_body_EmployeeWizard_lblCode" style="color:Black;">Code</span><span
                                 class="required"> *</span>
-                                <input name="ctl00$body$EmployeeWizard$txtCode" type="text"  formControlName="companyId" maxlength="20"
+                            <input name="ctl00$body$EmployeeWizard$txtCode" type="text" formControlName = "companyId" maxlength="20"
                                 id="ctl00_body_EmployeeWizard_txtCode" class="form-control" style="color:Black;">
 
                         </div>
@@ -202,7 +197,7 @@
                             <label>Date of birth<span class="required">*</span></label>
                             <div class="date_grop">
                                 <div class="date date-picker">
-                                    <input name="ctl00$body$EmployeeWizard$txtDob" type="text" formControlName = "dateofbirth"
+                                    <input name="ctl00$body$EmployeeWizard$txtDob" type="date" formControlName = "dateofbirth"
                                         id="ctl00_body_EmployeeWizard_txtDob" class="date_field" style="width:92%;">
                                     <span class="add-on"><i class="cal_icon" id="cal"></i></span>
                                     <br>
@@ -245,7 +240,7 @@
                         </div>
                         <div class="form-group">
                             <label>State </label>
-                            <select name="ctl00$body$EmployeeWizard$ddlState" id="ctl00_body_EmployeeWizard_ddlState"
+                            <select name="ctl00$body$EmployeeWizard$ddlState" id="ctl00_body_EmployeeWizard_ddlState" formControlName = "state"
                                 class="form-control search-default">
                                 <option value="-- Select --">--
                                     Select --</option>
@@ -344,12 +339,10 @@
                                     Half-Yearly</option>
 
                             </select>
-                         
-                              
                         </div>
                         <div class="form-group">
                             <label>Tax status</label>
-                            <select name="ctl00$body$EmployeeWizard$ddlTaxStatus"
+                            <select name="ctl00$body$EmployeeWizard$ddlTaxStatus" formControlName = "taxStatus"
                                 id="ctl00_body_EmployeeWizard_ddlTaxStatus" tabindex="37"
                                 class="form-control search-default">
                                 <option value="-- Select --">--
@@ -367,7 +360,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Gender <span class="required">*</span></label>
-                            <select name="ctl00$body$EmployeeWizard$ddlGender" id="ctl00_body_EmployeeWizard_ddlGender"
+                            <select name="ctl00$body$EmployeeWizard$ddlGender" id="ctl00_body_EmployeeWizard_ddlGender" formControlName = "gender"
                                 class="form-control Select-default">
                                 <option value="-- Select --">--
                                     Select --</option>
@@ -469,7 +462,7 @@
                             <div class="date_grop">
                                 <div class="date date-picker">
                                     <input name="ctl00$body$EmployeeWizard$txtDateofJoin" formControlName = "joinDate"
-                                        id="ctl00_body_EmployeeWizard_txtDateofJoin" class="date_field" type="text"
+                                        id="ctl00_body_EmployeeWizard_txtDateofJoin" class="date_field" type="date"
                                         style="width: 92%;">
                                     <span class="add-on"><i class="cal_icon" id="I1"></i></span>
                                     <br>
@@ -485,7 +478,7 @@
                             <br>
                             <br>
                             <label>Job type </label>
-                            <select name="ctl00$body$EmployeeWizard$ddlJobType"
+                            <select name="ctl00$body$EmployeeWizard$ddlJobType" formControlName = "jobType"
                                 id="ctl00_body_EmployeeWizard_ddlJobType" class="form-control search-default">
                                 <option selected="selected" value="-- Select --">-- Select --</option>
                                 <option value="14">Probation</option>
@@ -498,7 +491,7 @@
                         </div>
                         <div class="form-group">
                             <label>Payment mode</label>
-                            <select name="ctl00$body$EmployeeWizard$ddlpaymentmode"
+                            <select name="ctl00$body$EmployeeWizard$ddlpaymentmode" formControlName = "paymentMode"
                                 id="ctl00_body_EmployeeWizard_ddlpaymentmode" class="form-control search-default">
                                 <option selected="selected" value="-- Select --">-- Select --</option>
                                 <option value="68">Bank Transfer</option>
@@ -535,7 +528,7 @@
                         <div class="form-group">
 
                             <label>Location <span class="required">*</span></label>
-                            <select name="ctl00$body$EmployeeWizard$ddlLocation"
+                            <select name="ctl00$body$EmployeeWizard$ddlLocation" formControlName = "location"
                                 id="ctl00_body_EmployeeWizard_ddlLocation" class="form-control search-default">
                                 <option selected="selected" value="-- Select --">-- Select --</option>
                                 <option value="116809">Bangalore</option>
@@ -546,7 +539,7 @@
                         </div>
                         <div class="form-group">
                             <label>Department </label>
-                            <select name="ctl00$body$EmployeeWizard$ddlDepartment"
+                            <select name="ctl00$body$EmployeeWizard$ddlDepartment" formControlName = "department"
                                 id="ctl00_body_EmployeeWizard_ddlDepartment" class="form-control search-default">
                                 <option selected="selected" value="-- Select --">-- Select --</option>
                                 <option value="1097503">Development</option>
@@ -558,7 +551,7 @@
                         </div>
                         <div class="form-group">
                             <label>Designation </label>
-                            <select name="ctl00$body$EmployeeWizard$ddlDesignation"
+                            <select name="ctl00$body$EmployeeWizard$ddlDesignation" formControlName = "Designation"
                                 id="ctl00_body_EmployeeWizard_ddlDesignation" class="form-control search-default">
                                 <option selected="selected" value="-- Select --">-- Select --</option>
                                 <option value="1097505">Architect</option>
@@ -569,13 +562,13 @@
 
                             </select>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Level <span class="required"></span></label>
                             <select name="ctl00$body$EmployeeWizard$ddlLevel" id="ctl00_body_EmployeeWizard_ddlLevel"
                                 class="form-control Select-default">
 
                             </select>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -601,8 +594,6 @@
                                 <label>PF eligibility</label>
                                 <div class="checkbox">
                                     <label>
-
-
                                         <span class="grey"><input id="ctl00_body_EmployeeWizard_chkEmployeeHasPF"
                                                 type="checkbox" name="ctl00$body$EmployeeWizard$chkEmployeeHasPF"
                                                 onclick="EnablePF();"></span>
@@ -638,7 +629,7 @@
                                     <label>PF Enrollment Date</label>
                                     <div class="date_grop">
                                         <div class="date date-picker">
-                                            <input name="ctl00$body$EmployeeWizard$txtPFJoinDate" type="text" formControlName = "pfEnroleDate"
+                                            <input name="ctl00$body$EmployeeWizard$txtPFJoinDate" type="date" formControlName = "pfEnroleDate"
                                                 id="ctl00_body_EmployeeWizard_txtPFJoinDate" class="TextBox"
                                                 style="width: 92%;">
                                             <span class="add-on"><i class="cal_icon" id="I3"></i></span>
@@ -661,7 +652,7 @@
                                 <div class="col-md-12">
                                     <br>
                                     <label>Relationship</label>
-                                    <select name="ctl00$body$EmployeeWizard$ddlPfAtECR"
+                                    <select name="ctl00$body$EmployeeWizard$ddlPfAtECR" formControlName = "Relationship"
                                         id="ctl00_body_EmployeeWizard_ddlPfAtECR" class="form-control search-default">
                                         <option selected="selected" value=""></option>
                                         <option value="Father">Father</option>
@@ -783,10 +774,8 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Variable Pay</label>
-                            <input name="ctl00$body$EmployeeWizard$txtVariablePay" type="text" formControlName = "variablePay"
-                                id="ctl00_body_EmployeeWizard_txtVariablePay" class="form-control">
-
-
+                            <input name="ctl00$body$EmployeeWizard$txtPay" type="text" formControlName ="Pay"
+                                id="ctl00_body_EmployeeWizard_txt" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -803,7 +792,7 @@
                                 <label>&nbsp; </label>
                             </div>
 
-                            <input type="button" name="ctl00$body$EmployeeWizard$btnCalculate" value="Calculate" formControlName = "total"
+                            <input type="button" name="ctl00$body$EmployeeWizard$btnCalculate" value="Calculate" formControlName = ""
                                 id="ctl00_body_EmployeeWizard_btnCalculate" class="btn btn-default">
 
 
@@ -1584,14 +1573,14 @@
                     </div>
                 </div>
             </div>
-                <button type="submit" [disabled]="!onBordingForm.valid">Submit</button>
+            <div style="text-align: right;">
+                <button type="submit" class="btn btn-blue full right " [disabled]="!onBordingForm.valid">Submit</button>
+            </div>
         </div>
 
-        <div *ngIf="OTHERS" >
+        <!-- <div *ngIf="OTHERS" >
             other information
-        </div>
-       
-        </form >
-      
+        </div> -->
+    </form>
         <!-- salary info End-->
     </div>
