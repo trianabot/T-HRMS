@@ -117,7 +117,7 @@
     <div class="col-md-12">
         <ul id="EmpCenterTab" class="nav nav-tabs tab-bricky">
             <li class="" value="itdepartment" (click) = "it()" >
-                <a data-toggle="tab" id="it" class="Employee " [ngClass]="status ? 'success' : 'danger'">IT Department
+                <a data-toggle="tab" id="it" class="Employee "  [ngClass]="status ? 'success' : 'danger'">IT Department
                 </a>
             </li>
             <li value="qcdepartment" (click) = "qc()" >
@@ -145,7 +145,8 @@
      
         <div class="col-md-3" *ngFor="let obj of empsData">
             <div class="card">
-                <img class="card-img-top" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <img class="card-img-top" type="image" src="../../assets/img/800X500/img1.jpg" alt="Card image cap">
+                <!-- <input type="file" value="image"> -->
                 <div class="card-body">
                   <div class="row">
                     <span class="col-md-5">Emp Id </span>
@@ -160,7 +161,7 @@
                     <span class="col-md-7">: &nbsp; {{obj.Designation}}</span>
                 </div>
                  <div style="text-align: center;">
-                    <a  class="btn btn-primary">View</a>
+                    <a  class="btn btn-primary" [routerLink] = "['/empoverview', obj.companyId]" >View</a>
                  </div>
                 </div>
               </div>
@@ -464,3 +465,4 @@
         </div>
     </div>
 </div>
+

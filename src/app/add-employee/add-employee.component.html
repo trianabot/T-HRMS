@@ -1,6 +1,9 @@
 <div class="blue_header">
-    <span id="ctl00_lblHeader" class="pull-left">Create Employee</span>
-    <span class="xclose"><a href="javascript:void(0);" onclick="closeTrowser();"><i class="fa fa-times"></i></a></span>
+    <div>
+        <img routerLink="/emp" src="../../assets/img/blue-angle-text-symbol-arrow-turn-left.png" class="back" >
+        <p id="ctl00_lblHeader" class="pull-left">Create Employee</p>
+    </div>
+    <!-- <span class="xclose"><a href="javascript:void(0);" onclick="closeTrowser();"><i class="fa fa-times"></i></a></span> -->
 </div>
 <div class="pageWizard_container">
 
@@ -35,7 +38,7 @@
                                                         <td >
                                                             <div value="personal"  (click)="personal()">
                                                                 <div id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_divStep"
-                                                                    class="" [ngClass]="status ? 'ActiveStepNumber' : 'InActiveStepNumber'">
+                                                                    class=""  [ngClass]="status ? 'ActiveStepNumber' : 'InActiveStepNumber'">
                                                                     <span
                                                                         id="ctl00_body_EmployeeWizard_SideBarContainer_SideBarList_ctl00_lblStep1" 
                                                                         style="cursor: pointer;">1</span>
@@ -198,8 +201,8 @@
                             <div class="date_grop">
                                 <div class="date date-picker">
                                     <input name="ctl00$body$EmployeeWizard$txtDob" type="date" formControlName = "dateofbirth"
-                                        id="ctl00_body_EmployeeWizard_txtDob" class="date_field" style="width:92%;">
-                                    <span class="add-on"><i class="cal_icon" id="cal"></i></span>
+                                        id="ctl00_body_EmployeeWizard_txtDob" class="date_field" style="width:100%;">
+                                    <!-- <span class="add-on"><i class="cal_icon" id="cal"></i></span> -->
                                     <br>
                                 </div>
                                 <br>
@@ -433,19 +436,22 @@
                         <br>
                         <br>
                         <div class="form-group">
-                            <!-- <div class="photo_holder">
+                            <div class="photo_holder">
                                 <img id="ctl00_body_EmployeeWizard_imgClient" src=""
                                     style="height:120px;width:120px;border-width:0px;">
-                            </div> -->
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <!-- <input name="ctl00$body$EmployeeWizard$EmpLogo" type="file"
-                                id="ctl00_body_EmployeeWizard_EmpLogo" onchange="previewFile()"> -->
+                            </div>
+                            <input name="ctl00$body$EmployeeWizard$EmpLogo" type="file"
+                                id="ctl00_body_EmployeeWizard_EmpLogo"  accept="image/*"
+                                (change)="previewFile()">
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-12" style="display: flex;" >
+                    <div class="col-md-6" style="text-align: left;">
+                        <button type="button" class="btn btn-blue full right " >Previous</button>
+                    </div>
+                    <div class="col-md-6"style="text-align: right;">
+                        <button type="button" class="btn btn-blue full right "  >Next</button>
                     </div>
                 </div>
             </div>
@@ -580,6 +586,9 @@
                         </div> -->
                     </div>
                 </div>
+                <div class="col-md-12" style="text-align: right;">
+                    <button type="button" class="btn btn-blue full right " >Next</button>
+                </div>
             </div>
         </div>
         <!--Official Details End-->
@@ -604,14 +613,14 @@
                                 <div class="checkbox">
                                     <label>
                                         <span class="grey"><input id="ctl00_body_EmployeeWizard_chkEmployeeHasPF"
-                                                type="checkbox" name="ctl00$body$EmployeeWizard$chkEmployeeHasPF"
-                                                onclick="EnablePF();"></span>
+                                                type="radio" name="ctl00$body$EmployeeWizard$chkEmployeeHasPF"
+                                                (click)="EnablePF();"></span>
                                         &nbsp; Employee has PF
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <div id="ctl00_body_EmployeeWizard_PF" hidden="">
+                        <div id="ctl00_body_EmployeeWizard_PF" *ngIf= "ActivePF">
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <br>
@@ -640,8 +649,8 @@
                                         <div class="date date-picker">
                                             <input name="ctl00$body$EmployeeWizard$txtPFJoinDate" type="date" formControlName = "pfEnroleDate"
                                                 id="ctl00_body_EmployeeWizard_txtPFJoinDate" class="TextBox"
-                                                style="width: 92%;">
-                                            <span class="add-on"><i class="cal_icon" id="I3"></i></span>
+                                                style="width: 100%;">
+                                            <!-- <span class="add-on"><i class="cal_icon" id="I3"></i></span> -->
 
 
                                         </div>
@@ -676,7 +685,7 @@
                                     <label>
                                         <span
                                             title="First time employees, joining employment on or after 1 September 2014 and having Basic salary exceeding INR 15,000 per month shall not be eligible for the Pension Scheme (EPS)"><input
-                                                id="ctl00_body_EmployeeWizard_chkEPSEntitle" type="checkbox"
+                                                id="ctl00_body_EmployeeWizard_chkEPSEntitle" type="radio"
                                                 name="ctl00$body$EmployeeWizard$chkEPSEntitle"><label
                                                 for="ctl00_body_EmployeeWizard_chkEPSEntitle">Entitled to
                                                 EPS</label></span>
@@ -703,8 +712,8 @@
                                     <label>
 
                                         <span class="grey"><input id="ctl00_body_EmployeeWizard_chkEmployeeHasESI"
-                                                type="checkbox" name="ctl00$body$EmployeeWizard$chkEmployeeHasESI"
-                                                onclick="EnableESI();"></span>
+                                                type="radio" name="ctl00$body$EmployeeWizard$chkEmployeeHasESI"
+                                                (click)="EnableESI();"></span>
                                         &nbsp;
                                         Employee has ESI
                                     </label>
@@ -713,12 +722,15 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div id="ctl00_body_EmployeeWizard_ESI" class="col-md-12" hidden="">
+                            <div id="ctl00_body_EmployeeWizard_ESI" class="col-md-12"  *ngIf = "ActiveEsi">
                                 <label>ESI Number</label>
                                 <input name="ctl00$body$EmployeeWizard$txtESINumber" type="text" maxlength="15" formControlName = "esiNumber"
                                     id="ctl00_body_EmployeeWizard_txtESINumber" class="form-control">
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-12" style="text-align: right;">
+                        <button type="button" class="btn btn-blue full right " >Next</button>
                     </div>
                 </div>
             </div>

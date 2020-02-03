@@ -1,0 +1,137 @@
+<!-- <p>html</p> -->
+<div style="display: flex;">
+    <img routerLink="/emp" src="../../assets/img/blue-angle-text-symbol-arrow-turn-left.png" class="back">
+    <p>Employee Over view</p>
+</div>
+<div>
+    <div class="" style="padding: 10px; " *ngIf="empsFullData; ">
+        <div class="row" style="background: white;">
+            <div class="col-md-12 ">
+                <div class="row p-10">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <span class="col-md-5 p-10">Company Id</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.companyId}}</span>
+                            <span class="col-md-5 p-10">Name</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.empName}}</span>
+                            <span class="col-md-5 p-10">date of birth</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.dateofbirth}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <span class="col-md-5 p-10">gender</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.gender}}</span>
+                            <span class="col-md-5 p-10">emailId</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.emailId}}</span>
+                            <span class="col-md-5 p-10">Designation</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.Designation}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <p>Personal Details</p>
+                <div class="row p-10">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <span class="col-md-5 p-10">Address1</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.address1}}</span>
+                            <span class="col-md-5 p-10">Address2</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.address2}}</span>
+                            <span class="col-md-5 p-10">city</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.city}}</span>
+                            <span class="col-md-5 p-10">phone</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.phone}}</span>
+                            <span class="col-md-5 p-10">mobile</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.mobile}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <span class="col-md-5 p-10">emergency</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.emergency}}</span>
+                            <span class="col-md-5 p-10">panNumber</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.panNumber}}</span>
+                            <span class="col-md-5 p-10">aadhaarNo</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.aadhaarNo}}</span>
+                            <span class="col-md-5 p-10">bankAccount</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.bankAccount}}</span>
+                            <span class="col-md-5 p-10">state</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.state}}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p>Official Details</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <span class="col-md-5 p-10">joinDate</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.joinDate}}</span>
+                            <span class="col-md-5 p-10">confirmation</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.confirmation}}</span>
+                            <span class="col-md-5 p-10">pfUan</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.pfUan}}</span>
+                            <span class="col-md-5 p-10">pfNumber</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.pfNumber}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <span class="col-md-5 p-10">pfEnroleDate</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.pfEnroleDate}}</span>
+                            <span class="col-md-5 p-10">epfNumber</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.epfNumber}}</span>
+                            <span class="col-md-5 p-10">esiNumber</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.esiNumber}}</span>
+                            <span class="col-md-5 p-10">ess</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.ess}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p>Salary Details</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <span class="col-md-5 p-10">ctc</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.ctc}}</span>
+                            <span class="col-md-5 p-10">fbp</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.fbp}}</span>
+                            <span class="col-md-5 p-10">variablePay</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.variablePay}}</span>
+                            <span class="col-md-5 p-10">total</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.total}}</span>
+                            <span class="col-md-5 p-10">differenceAmount</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.differenceAmount}}</span>
+                            <span class="col-md-5 p-10">productType</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.productType}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <span class="col-md-5 p-10">taxStatus</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.taxStatus}}</span>
+                            <span class="col-md-5 p-10">jobType</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.jobType}}</span>
+                            <span class="col-md-5 p-10">paymentMode</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.paymentMode}}</span>
+                            <span class="col-md-5 p-10">location</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.location}}</span>
+                            <span class="col-md-5 p-10">department</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.department}}</span>
+                            <span class="col-md-5 p-10">Relationship</span>
+                            <span class="col-md-7 p-10">: &nbsp; {{empsFullData.Relationship}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

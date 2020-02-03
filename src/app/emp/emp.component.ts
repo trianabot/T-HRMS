@@ -13,6 +13,7 @@ export class EmpComponent implements OnInit {
   itdepartment: boolean;
   qcdepartment: boolean;
   hrdepatment: boolean;
+  Overview : boolean;
   trainy: boolean;
   status: boolean = false;
   status1: boolean = false;
@@ -85,6 +86,8 @@ export class EmpComponent implements OnInit {
 //   });
 // }
   }
+
+  
   getEmployees(){
 this.authserviced.getemployees().subscribe(data=>{
 this.empsData=data['data'];

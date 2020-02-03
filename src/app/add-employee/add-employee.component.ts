@@ -18,6 +18,9 @@ export class AddEmployeeComponent implements OnInit {
   status2 : boolean = false;
   status3 : boolean = false;
 
+  ActivePF : boolean;
+  ActiveEsi : boolean;
+
   constructor(private fb:FormBuilder,private authservice:AuthService) {
     this.onBordingForm=this.fb.group({
       companyId:['',Validators.required],
@@ -125,6 +128,12 @@ export class AddEmployeeComponent implements OnInit {
     this.status = false;
     this.status1 = false;
     this.status3 = false;
+    }
+    EnablePF(){
+this.ActivePF = true;
+    }
+    EnableESI(){
+      this.ActiveEsi = true;
     }
   // others(){
   //   this.OTHERS=true;

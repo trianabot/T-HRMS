@@ -21,7 +21,9 @@ import { ProjectComponent } from './project/project.component';
 import { EmpComponent } from './emp/emp.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { NbThemeModule } from '@nebular/theme';
-import {MatTabsModule} from '@angular/material'
+import {MatTabsModule} from '@angular/material';
+import { EmpOverviewComponent } from './emp-overview/emp-overview.component';
+import { HRDepartmentComponent } from './hrdepartment/hrdepartment.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import {MatTabsModule} from '@angular/material'
     DeptComponent,
     ProjectComponent,
     EmpComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    EmpOverviewComponent,
+    HRDepartmentComponent
   ],
   imports: [
     BrowserModule,

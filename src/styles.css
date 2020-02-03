@@ -244,7 +244,7 @@
   
   label {
     display: inline-block;
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
   }
   
   button {
@@ -1917,6 +1917,7 @@
     font-size: 0.9375rem;
     line-height: 1.5;
     color: #495057;
+    height: 35px;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #d9e4ec;
@@ -11713,7 +11714,7 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
   padding: 5px 10px;
   transition-duration: 0.1s;
   box-shadow: none;
-  height: 30px;
+  height: 35px;
   margin-bottom: 5px;
 }
 .input_search button {
@@ -11820,10 +11821,19 @@ input[type=checkbox] {
   line-height: 40px;
   position: fixed;
   box-sizing: border-box;
-  border-bottom: 2px solid #6b15b6;
+  border-bottom: 1px solid #6b15b6;
   font-weight: 400;
   top: 60px;
   z-index: 999999;
+  display: flex;
+}
+.back{
+  width: 4%;
+  background: #6b15b6;
+  padding: 5px;
+  border-radius: 5px;
+  float: left;
+  height: 30px;
 }
 .blue_header span {
   float: right;
@@ -11863,6 +11873,22 @@ table {
   border-color: #ccc;
   background: #6b15b6;
   color: #FFFFFF;
+  cursor: pointer;
+}
+.InActiveStepNumber{
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 15px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  width: 40px;
+  z-index: 0;
+  border-color: #ccc;
+  background: #f4f4f4;
+  color: #000000;
+  cursor: pointer;
 }
 .EmpWizardblue_footer {
   width: 84%;

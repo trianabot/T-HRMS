@@ -35,4 +35,7 @@ export class AuthService {
   getemployees(){
     return this.http.get('http://localhost:2020/user/getemployees');
   }
+  getEmployeeById(empId:string){
+    return this.http.get('http://localhost:2020/user/getEmployeeById/'+empId);
+  }
 }

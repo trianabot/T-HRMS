@@ -10,6 +10,8 @@ import { DeptComponent } from './dept/dept.component';
 import { ProjectComponent } from './project/project.component';
 import { EmpComponent } from './emp/emp.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { EmpOverviewComponent } from './emp-overview/emp-overview.component';
+import { HRDepartmentComponent } from './hrdepartment/hrdepartment.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path:'dept',component:DeptComponent},
   {path:'project',component:ProjectComponent},
   {path:'emp',component:EmpComponent},
-  {path:'addemployee', component:AddEmployeeComponent}
+  {path:'addemployee', component:AddEmployeeComponent},
+  {path:'empoverview/:empId', component:EmpOverviewComponent},
+  {path:'HrDept', component:HRDepartmentComponent}
 ];
 
 @NgModule({
