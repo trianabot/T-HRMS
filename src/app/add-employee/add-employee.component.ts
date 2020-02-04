@@ -8,7 +8,13 @@ import { AuthService } from '../services/auth_service/auth.service';
 })
 export class AddEmployeeComponent implements OnInit {
   onBordingForm:FormGroup;
+  officialForm : FormGroup;
+  pfForm : FormGroup;
   OFFICIAL: boolean=false;
+
+  // registerForm: FormGroup;
+  submitted = false;
+
   PF: boolean=false;
   SALARY: boolean=false;
   PERSONAL: boolean=false;
@@ -27,7 +33,7 @@ export class AddEmployeeComponent implements OnInit {
       empName:['',Validators.required],
       dateofbirth:['',Validators.required],
       address1:['',Validators.required],
-      address2:['',Validators.required],
+      // // address2:['',Validators.required],
       city:['',Validators.required],
       emailId:['',Validators.required],
       phone:['',Validators.required],
@@ -35,34 +41,38 @@ export class AddEmployeeComponent implements OnInit {
       emergency:['',Validators.required],
       panNumber:['',Validators.required],
       aadhaarNo:['',Validators.required],
-      joinDate:['',Validators.required],
-      bankAccount:['',],
-      ess:[''],
-      confirmation:['',],
-      pfUan:['',],
-      pfNumber:['',],
-      pfEnroleDate:['',],
-      epfNumber:['',],
-      esiNumber:['',],
-      ctc:['',],
-      fbp:['',],
-      variablePay:['',],
-      total:['',],
-      differenceAmount:[''],
-      productType:['',],
+      
+      // esiNumber:['',],
+      // ctc:['',],
+      // fbp:['',],
+      // variablePay:['',],
+      // total:['',],
+      // differenceAmount:[''],
+      // productType:['',],
       taxStatus : ['',],
       state : ['',],
       gender : ['',],
+     
+    })
+    this.officialForm = this.fb.group({
+       joinDate:['',Validators.required],
+      bankAccount:['',],
+      ess:[''],
+      confirmation:['',],
       jobType : ['',],
       paymentMode : ['',],
       location :['',],
       department : ['',],
       Designation : ['',],
-      Relationship : ['',],
-
-      
-     
     })
+    this.pfForm = this.fb.group({
+    pfUan:['',Validators.required],
+      pfNumber:['',],
+      pfEnroleDate:['',],
+      epfNumber:['',],
+       Relationship : ['',]
+   })
+   
    }
 
   ngOnInit() {
@@ -73,17 +83,17 @@ export class AddEmployeeComponent implements OnInit {
     this.SALARY=false;
 
     this.status = ! this.status;
-
   }
 
   official() {
+  this. onBordingForm = this.onBordingForm;
     this.OFFICIAL=true;
     this.PF=false;
     this.SALARY=false;
     this.PERSONAL=false;
     this.OTHERS=false;
 
-    this.status = false;
+    this.status = true;
     this.status1 = ! this.status1;
     this.status2 = false;
     this.status3 = false;
@@ -110,10 +120,10 @@ export class AddEmployeeComponent implements OnInit {
     this.OTHERS=false;
 
     
-    this.status1 = false;
+    this.status1 = true;
     this.status3 = ! this.status3;
-    this.status2 = false;
-    this.status = false;
+    this.status2 = true;
+    this.status = true;
 
   }
   pf(){
@@ -125,8 +135,8 @@ export class AddEmployeeComponent implements OnInit {
 
     
     this.status2 = ! this.status2;
-    this.status = false;
-    this.status1 = false;
+    this.status = true;
+    this.status1 = true;
     this.status3 = false;
     }
     EnablePF(){
@@ -135,14 +145,13 @@ this.ActivePF = true;
     EnableESI(){
       this.ActiveEsi = true;
     }
-  // others(){
-  //   this.OTHERS=true;
-  //   this.OFFICIAL=false;
-  //   this.PF=false;
-  //   this.SALARY=false;
-  //   this.PERSONAL=false;
-  // }
+    nextform(){
+
+    }
+
+    get f() { return this.onBordingForm.controls; }
   onSubmit(){
+    this.submitted = true;
     console.log("onbording form value",this.onBordingForm.value);
     this.authservice.onbording(this.onBordingForm.value).subscribe(data=>{
       console.log("data from onbording service",data['data']);
@@ -150,6 +159,12 @@ this.ActivePF = true;
     },err=>{
       console.log("err from onbording service",err);
     })
+  }
+  OFFICIALForm(){
+    this.submitted = true;
+  }
+  PFForm(){
+    this.submitted = true;
   }
   cancelService(){
    this.onBordingForm.reset();

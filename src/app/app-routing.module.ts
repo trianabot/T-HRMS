@@ -14,6 +14,7 @@ import { EmpOverviewComponent } from './emp-overview/emp-overview.component';
 import { HRDepartmentComponent } from './hrdepartment/hrdepartment.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path:'',component:LoginComponent},
   {path:'registration',component:RegistrtaionComponent},
   {path:'dashboard',component:DashboardComponent},

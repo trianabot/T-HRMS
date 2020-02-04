@@ -10,122 +10,126 @@ import { NaveEvetsService } from 'src/app/services/nave-evets.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-show =  false;
-message = false;
-bellinfo = false;
-circleinfo = false;
-userinfo = false;
-success = false;
+  show = false;
+  message = false;
+  bellinfo = false;
+  circleinfo = false;
+  userinfo = false;
+  success = false;
 
-public sideNavCloseEvent:Event;
+  public sideNavCloseEvent: Event;
 
-belldata = false;
-circledata = false;
-userdata = false;
-isLoginCom=false;
-isActive:boolean;
-loggedInUser:any;
-  constructor(private authservice:AuthService,private router:Router, private naveCloseService:NaveEvetsService) { }
+  belldata = false;
+  circledata = false;
+  userdata = false;
+  isLoginCom = false;
+  isActive: boolean;
+  loggedInUser: any;
+  constructor(private authservice: AuthService, private router: Router, private naveCloseService: NaveEvetsService) { }
 
   ngOnInit() {
     // this.dropdown();
-    this.isActive=JSON.parse(sessionStorage.getItem("isActive"));
-    this.loggedInUser=sessionStorage.getItem("userId");
-   this.authservice.$isLoggedIn.subscribe(data => {
-    this.isActive = data['isActive'];
- this.loggedInUser=data['userId'];
-  });
+    this.isActive = JSON.parse(sessionStorage.getItem("isActive"));
+    this.loggedInUser = sessionStorage.getItem("userId");
+    this.authservice.$isLoggedIn.subscribe(data => {
+      this.isActive = data['isActive'];
+      this.loggedInUser = data['userId'];
+    });
   }
-  clickEvent(){
-    this.message = ! this.message;
-    if(this.message){
+  clickEvent() {
+    this.message = !this.message;
+    if (this.message) {
       this.show = true;
       this.belldata = false;
       this.circledata = false;
       this.userdata = false;
     }
-    else{
+    else {
       this.show = false;
       this.belldata = false;
       this.circledata = false;
       this.userdata = false;
     }
-    
+
     // alert("hi");
   }
-  clear(){
-    this.show= false;
+  clear() {
+    this.show = false;
     this.belldata = false;
   }
-  bell(){
-    this.bellinfo =! this.bellinfo;
-    if(this.bellinfo){
+  bell() {
+    this.bellinfo = !this.bellinfo;
+    if (this.bellinfo) {
       this.belldata = true;
       this.userdata = false;
       this.show = false;
       this.circledata = false;
     }
-    else{
+    else {
       this.belldata = false;
-    this.userdata = false;
-    this.show = false;
-    this.circledata = false;
+      this.userdata = false;
+      this.show = false;
+      this.circledata = false;
     }
-    
+
   }
-  circle(){
-this.circleinfo = ! this.circleinfo;
-if(this.circleinfo){
-  this.circledata = true;
-  this.show = false;
-  this.userdata = false;
-  this.belldata = false;
-}
-else{
-  this.circledata = false;
-  this.show = false;
-  this.userdata = false;
-  this.belldata = false;
-}
-   
+  circle() {
+    this.circleinfo = !this.circleinfo;
+    if (this.circleinfo) {
+      this.circledata = true;
+      this.show = false;
+      this.userdata = false;
+      this.belldata = false;
+    }
+    else {
+      this.circledata = false;
+      this.show = false;
+      this.userdata = false;
+      this.belldata = false;
+    }
+
   }
-  userprofile(){
-    this.userinfo = ! this.userinfo;
-    if(this.userinfo){
+  userprofile() {
+    this.userinfo = !this.userinfo;
+    if (this.userinfo) {
       this.circledata = false;
       this.show = false;
       this.belldata = false;
       this.userdata = true;
     }
-    else{
+    else {
       this.circledata = false;
-    this.show = false;
-    this.belldata = false;
-    this.userdata = false;
+      this.show = false;
+      this.belldata = false;
+      this.userdata = false;
     }
-    
+
   }
-  header(){
-  
-    this.success = ! this.success;
-    if(this.success){
+  header() {
+
+    this.success = !this.success;
+    if (this.success) {
       document.getElementById("change").style.width = "4rem";
     }
-    else{
+    else {
       document.getElementById("change").style.width = "15rem";
     }
     this.naveCloseService.closeNaveAction(this.success);
   }
-logout(){
-    let obj ={
-      emailId:sessionStorage.getItem("emailId"),
-      isActive:JSON.parse(sessionStorage.getItem("isActive")),
+  logout() {
+    let obj = {
+      emailId: sessionStorage.getItem("emailId"),
+      isActive: JSON.parse(sessionStorage.getItem("isActive")),
     }
-    this.authservice.logout(obj).subscribe(data=>{
+    this.authservice.logout(obj).subscribe(data => {
       sessionStorage.clear();
+
+      this.authservice.setUserName({ isActive: false });
+
       console.log("logout successfully");
       this.router.navigate(['/login'])
-    },err=>{
+
+    }, err => {
       console.log("error logout ");
     })
   }
