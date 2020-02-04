@@ -30,9 +30,14 @@ baseUIdata = false;
     if(action){
       document.getElementById("change1").style.width = "4rem";
       document.getElementById("u-nav").style.paddingLeft = "3rem"; 
+      document.getElementById("change1").style.transition = "0.5s";
+      document.getElementById("u-nav").style.transition = "0.5s";
     }else{
       document.getElementById("change1").style.width = "15rem";
-      document.getElementById("u-nav").style.paddingLeft = "14rem" 
+      document.getElementById("u-nav").style.paddingLeft = "14rem" ;
+      document.getElementById("change1").style.transition = "0.5s";
+      document.getElementById("u-nav").style.transition = "0.5s";
+      
     }
    });
   }

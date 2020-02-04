@@ -110,9 +110,11 @@ export class HeaderComponent implements OnInit {
     this.success = !this.success;
     if (this.success) {
       document.getElementById("change").style.width = "4rem";
+      document.getElementById("change").style.transition = "0.5s";
     }
     else {
       document.getElementById("change").style.width = "15rem";
+      document.getElementById("change").style.transition = "0.5s";
     }
     this.naveCloseService.closeNaveAction(this.success);
   }
